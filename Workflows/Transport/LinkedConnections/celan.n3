@@ -1,0 +1,12 @@
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix lc:    <http://semweb.mmlab.be/ns/linkedconnections#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix gtfs:  <http://vocab.gtfs.org/terms#> .
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+
+
+
+
+{?s ?p ?o}=>{?s ?p ?o}.

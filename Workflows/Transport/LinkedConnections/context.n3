@@ -1,0 +1,13 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+
+
+#Bob is in Ghent
+
+:bob a :User; :location <http://irail.be/stations/NMBS/008892007> 
+; :time "2019-06-17T12:20:00.000Z"^^xsd:dateTime.

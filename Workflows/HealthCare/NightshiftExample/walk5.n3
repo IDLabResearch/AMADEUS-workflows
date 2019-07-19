@@ -1,0 +1,50 @@
+#Processed by EYE v19.0705.1450 josd
+#eye 5patients.n3 --query descriptionGeneration.n3 --nope
+
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+
+{:walk gps:description ({?U_0 :location :room6} true {?U_0 :location :room7. ?U_0 :visited :room7} (:room6 :room7 :walk) 0.7 1 0.99 0.99)} <= {?U_0 a :Nurse}.
+
+
+
+{:walk gps:description ({?U_1 :location :room6} true {?U_1 :location :room8. ?U_1 :visited :room8} (:room6 :room8 :walk) 1.4 2 0.99 0.99)} <= {?U_1 a :Nurse}.
+{:walk gps:description ({?U_2 :location :room6} true {?U_2 :location :room9. ?U_2 :visited :room9} (:room6 :room9 :walk) 2.0999999999999996 3 0.99 0.99)} <= {?U_2 a :Nurse}.
+{:walk gps:description ({?U_3 :location :room6} true {?U_3 :location :room10. ?U_3 :visited :room10} (:room6 :room10 :walk) 1.4 2 0.99 0.99)} <= {?U_3 a :Nurse}.
+{:walk gps:description ({?U_4 :location :room6} true {?U_4 :location :office. ?U_4 :visited :office} (:room6 :office :walk) 0.7 1 0.99 0.99)} <= {?U_4 a :Nurse}.
+{:walk gps:description ({?U_5 :location :room7} true {?U_5 :location :room6. ?U_5 :visited :room6} (:room7 :room6 :walk) 0.7 1 0.99 0.99)} <= {?U_5 a :Nurse}.
+{:walk gps:description ({?U_6 :location :room7} true {?U_6 :location :room8. ?U_6 :visited :room8} (:room7 :room8 :walk) 0.7 1 0.99 0.99)} <= {?U_6 a :Nurse}.
+{:walk gps:description ({?U_7 :location :room7} true {?U_7 :location :room9. ?U_7 :visited :room9} (:room7 :room9 :walk) 1.4 2 0.99 0.99)} <= {?U_7 a :Nurse}.
+{:walk gps:description ({?U_8 :location :room7} true {?U_8 :location :room10. ?U_8 :visited :room10} (:room7 :room10 :walk) 1.4 2 0.99 0.99)} <= {?U_8 a :Nurse}.
+{:walk gps:description ({?U_9 :location :room7} true {?U_9 :location :office. ?U_9 :visited :office} (:room7 :office :walk) 0.7 1 0.99 0.99)} <= {?U_9 a :Nurse}.
+{:walk gps:description ({?U_10 :location :room8} true {?U_10 :location :room6. ?U_10 :visited :room6} (:room8 :room6 :walk) 1.4 2 0.99 0.99)} <= {?U_10 a :Nurse}.
+{:walk gps:description ({?U_11 :location :room8} true {?U_11 :location :room7. ?U_11 :visited :room7} (:room8 :room7 :walk) 0.7 1 0.99 0.99)} <= {?U_11 a :Nurse}.
+{:walk gps:description ({?U_12 :location :room8} true {?U_12 :location :room9. ?U_12 :visited :room9} (:room8 :room9 :walk) 0.7 1 0.99 0.99)} <= {?U_12 a :Nurse}.
+{:walk gps:description ({?U_13 :location :room8} true {?U_13 :location :room10. ?U_13 :visited :room10} (:room8 :room10 :walk) 1.4 2 0.99 0.99)} <= {?U_13 a :Nurse}.
+{:walk gps:description ({?U_14 :location :room8} true {?U_14 :location :office. ?U_14 :visited :office} (:room8 :office :walk) 0.7 1 0.99 0.99)} <= {?U_14 a :Nurse}.
+{:walk gps:description ({?U_15 :location :room9} true {?U_15 :location :room6. ?U_15 :visited :room6} (:room9 :room6 :walk) 2.0999999999999996 3 0.99 0.99)} <= {?U_15 a :Nurse}.
+{:walk gps:description ({?U_16 :location :room9} true {?U_16 :location :room7. ?U_16 :visited :room7} (:room9 :room7 :walk) 1.4 2 0.99 0.99)} <= {?U_16 a :Nurse}.
+{:walk gps:description ({?U_17 :location :room9} true {?U_17 :location :room8. ?U_17 :visited :room8} (:room9 :room8 :walk) 0.7 1 0.99 0.99)} <= {?U_17 a :Nurse}.
+{:walk gps:description ({?U_18 :location :room9} true {?U_18 :location :room10. ?U_18 :visited :room10} (:room9 :room10 :walk) 0.7 1 0.99 0.99)} <= {?U_18 a :Nurse}.
+{:walk gps:description ({?U_19 :location :room9} true {?U_19 :location :office. ?U_19 :visited :office} (:room9 :office :walk) 0.7 1 0.99 0.99)} <= {?U_19 a :Nurse}.
+{:walk gps:description ({?U_20 :location :room10} true {?U_20 :location :room6. ?U_20 :visited :room6} (:room10 :room6 :walk) 1.4 2 0.99 0.99)} <= {?U_20 a :Nurse}.
+{:walk gps:description ({?U_21 :location :room10} true {?U_21 :location :room7. ?U_21 :visited :room7} (:room10 :room7 :walk) 1.4 2 0.99 0.99)} <= {?U_21 a :Nurse}.
+{:walk gps:description ({?U_22 :location :room10} true {?U_22 :location :room8. ?U_22 :visited :room8} (:room10 :room8 :walk) 1.4 2 0.99 0.99)} <= {?U_22 a :Nurse}.
+{:walk gps:description ({?U_23 :location :room10} true {?U_23 :location :room9. ?U_23 :visited :room9} (:room10 :room9 :walk) 0.7 1 0.99 0.99)} <= {?U_23 a :Nurse}.
+{:walk gps:description ({?U_24 :location :room10} true {?U_24 :location :office. ?U_24 :visited :office} (:room10 :office :walk) 0.7 1 0.99 0.99)} <= {?U_24 a :Nurse}.
+{:walk gps:description ({?U_25 :location :office} true {?U_25 :location :room6. ?U_25 :visited :room6} (:office :room6 :walk) 0.7 1 0.99 0.99)} <= {?U_25 a :Nurse}.
+{:walk gps:description ({?U_26 :location :office} true {?U_26 :location :room7. ?U_26 :visited :room7} (:office :room7 :walk) 0.7 1 0.99 0.99)} <= {?U_26 a :Nurse}.
+{:walk gps:description ({?U_27 :location :office} true {?U_27 :location :room8. ?U_27 :visited :room8} (:office :room8 :walk) 0.7 1 0.99 0.99)} <= {?U_27 a :Nurse}.
+{:walk gps:description ({?U_28 :location :office} true {?U_28 :location :room9. ?U_28 :visited :room9} (:office :room9 :walk) 0.7 1 0.99 0.99)} <= {?U_28 a :Nurse}.
+{:walk gps:description ({?U_29 :location :office} true {?U_29 :location :room10. ?U_29 :visited :room10} (:office :room10 :walk) 0.7 1 0.99 0.99)} <= {?U_29 a :Nurse}.
+
+#2019-07-08T14:52:36.353Z in=45 out=30 ent=45 step=105 brake=2 inf=91750 sec=0.072 inf/sec=1274306
+#ENDS
+

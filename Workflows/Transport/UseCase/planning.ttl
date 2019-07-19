@@ -1,0 +1,2816 @@
+@prefix : <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix yes: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#yes/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix k_addr: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:> .
+@prefix k_fuel: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_fuel:> .
+@prefix unamed: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#> .
+@prefix owl2xml: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix k_contact: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_contact:> .
+@prefix k_theatre: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_theatre:> .
+@prefix has_k_addr: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_addr:> .
+@prefix has_k_fuel: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_fuel:> .
+@prefix has_k_theatre: <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_theatre:> .
+@base <https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl> .
+
+<https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_address
+unamed:has_address rdf:type owl:ObjectProperty ;
+                   rdfs:domain unamed:can_have_address ;
+                   rdfs:range unamed:address .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_contact
+unamed:has_contact rdf:type owl:ObjectProperty ;
+                   rdfs:domain unamed:can_have_contact ;
+                   rdfs:range unamed:contact .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_aeroway
+unamed:has_k_aeroway rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:spatial_location ;
+                     rdfs:range unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_amenity
+unamed:has_k_amenity rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:spatial_location ;
+                     rdfs:range unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_atm
+unamed:has_k_atm rdf:type owl:ObjectProperty ;
+                 rdfs:domain unamed:can_have_k_atm ;
+                 rdfs:range yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_bicycle_parking
+unamed:has_k_bicycle_parking rdf:type owl:ObjectProperty ;
+                             rdfs:domain unamed:v_bicycle_parking ;
+                             rdfs:range unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_castle_type
+unamed:has_k_castle_type rdf:type owl:ObjectProperty ;
+                         rdfs:domain unamed:can_have_k_castle_type ;
+                         rdfs:range unamed:k_castle_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_cuisine
+unamed:has_k_cuisine rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:can_have_k_cuisine ;
+                     rdfs:range unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_denomination
+unamed:has_k_denomination rdf:type owl:ObjectProperty ;
+                          rdfs:domain unamed:v_place_of_worship ;
+                          rdfs:range unamed:k_denomination .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_drive-through
+unamed:has_k_drive-through rdf:type owl:ObjectProperty ;
+                           rdfs:domain unamed:can_have_k_drive-through ;
+                           rdfs:range yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_fee
+unamed:has_k_fee rdf:type owl:ObjectProperty ;
+                 rdfs:domain unamed:can_have_k_fee ;
+                 rdfs:range yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_highway
+unamed:has_k_highway rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:spatial_location ;
+                     rdfs:range unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_historic
+unamed:has_k_historic rdf:type owl:ObjectProperty ;
+                      rdfs:domain unamed:spatial_location ;
+                      rdfs:range unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_landuse
+unamed:has_k_landuse rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:spatial_location ;
+                     rdfs:range unamed:k_landuse .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_leisure
+unamed:has_k_leisure rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:spatial_location ;
+                     rdfs:range unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_military
+unamed:has_k_military rdf:type owl:ObjectProperty ;
+                      rdfs:domain unamed:spatial_location ;
+                      rdfs:range unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_natural
+unamed:has_k_natural rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:spatial_location ;
+                     rdfs:range unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_power
+unamed:has_k_power rdf:type owl:ObjectProperty ;
+                   rdfs:domain unamed:spatial_location ;
+                   rdfs:range unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_religion
+unamed:has_k_religion rdf:type owl:ObjectProperty ;
+                      rdfs:domain unamed:v_place_of_worship ;
+                      rdfs:range unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_ruins
+unamed:has_k_ruins rdf:type owl:ObjectProperty ;
+                   rdfs:domain unamed:can_have_k_ruins ;
+                   rdfs:range yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_self_service
+unamed:has_k_self_service rdf:type owl:ObjectProperty ;
+                          rdfs:domain unamed:can_have_k_self_service ;
+                          rdfs:range yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_shop
+unamed:has_k_shop rdf:type owl:ObjectProperty ;
+                  rdfs:domain unamed:spatial_location ;
+                  rdfs:range unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_smokefree
+unamed:has_k_smokefree rdf:type owl:ObjectProperty ;
+                       rdfs:domain unamed:can_have_k_smokefree ;
+                       rdfs:range yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_smoking
+unamed:has_k_smoking rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:can_have_k_smoking ;
+                     rdfs:range unamed:decision .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_sport
+unamed:has_k_sport rdf:type owl:ObjectProperty ;
+                   rdfs:domain unamed:spatial_location ;
+                   rdfs:range unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_tourism
+unamed:has_k_tourism rdf:type owl:ObjectProperty ;
+                     rdfs:domain unamed:spatial_location ;
+                     rdfs:range unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_waterway
+unamed:has_k_waterway rdf:type owl:ObjectProperty ;
+                      rdfs:domain unamed:spatial_location ;
+                      rdfs:range unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_fuel:electricity
+has_k_fuel:electricity rdf:type owl:ObjectProperty ;
+                       rdfs:domain unamed:v_fuel ;
+                       rdfs:range yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#has_k_theatre:genre
+has_k_theatre:genre rdf:type owl:ObjectProperty ;
+                    rdfs:domain unamed:v_theatre ;
+                    rdfs:range k_theatre:genre .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_beds
+unamed:k_beds rdf:type owl:DatatypeProperty ;
+              rdfs:domain unamed:can_have_k_beds ;
+              rdfs:range xsd:integer .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_bic
+unamed:k_bic rdf:type owl:DatatypeProperty ;
+             rdfs:domain unamed:can_have_k_bic ;
+             rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_capacity
+unamed:k_capacity rdf:type owl:DatatypeProperty ;
+                  rdfs:domain unamed:can_have_k_capacity ;
+                  rdfs:range xsd:integer .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_collection_times
+unamed:k_collection_times rdf:type owl:DatatypeProperty ;
+                          rdfs:domain unamed:can_have_k_collection_times ;
+                          rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_currency
+unamed:k_currency rdf:type owl:DatatypeProperty ;
+                  rdfs:domain unamed:can_have_k_currency ;
+                  rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_name
+unamed:k_name rdf:type owl:DatatypeProperty ;
+              rdfs:domain unamed:can_have_k_name ;
+              rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_network
+unamed:k_network rdf:type owl:DatatypeProperty ;
+                 rdfs:domain unamed:can_have_k_network ;
+                 rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_opening_hours
+unamed:k_opening_hours rdf:type owl:DatatypeProperty ;
+                       rdfs:domain unamed:can_have_k_opening_hours ;
+                       rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_operator
+unamed:k_operator rdf:type owl:DatatypeProperty ;
+                  rdfs:domain unamed:can_have_k_operator ;
+                  rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_ref
+unamed:k_ref rdf:type owl:DatatypeProperty ;
+             rdfs:domain unamed:can_have_k_ref ;
+             rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_rooms
+unamed:k_rooms rdf:type owl:DatatypeProperty ;
+               rdfs:domain unamed:can_have_k_rooms ;
+               rdfs:range xsd:integer .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_service_times
+unamed:k_service_times rdf:type owl:DatatypeProperty ;
+                       rdfs:domain unamed:can_have_k_service_times ;
+                       rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:city
+k_addr:city rdf:type owl:DatatypeProperty ;
+            rdfs:domain unamed:address ;
+            rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:country
+k_addr:country rdf:type owl:DatatypeProperty ;
+               rdfs:domain unamed:address ;
+               rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:district
+k_addr:district rdf:type owl:DatatypeProperty ;
+                rdfs:domain unamed:address ;
+                rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:hamlet
+k_addr:hamlet rdf:type owl:DatatypeProperty ;
+              rdfs:domain unamed:address ;
+              rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:housename
+k_addr:housename rdf:type owl:DatatypeProperty ;
+                 rdfs:domain unamed:address ;
+                 rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:housenumber
+k_addr:housenumber rdf:type owl:DatatypeProperty ;
+                   rdfs:domain unamed:address ;
+                   rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:postcode
+k_addr:postcode rdf:type owl:DatatypeProperty ;
+                rdfs:domain unamed:address ;
+                rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:province
+k_addr:province rdf:type owl:DatatypeProperty ;
+                rdfs:domain unamed:address ;
+                rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:street
+k_addr:street rdf:type owl:DatatypeProperty ;
+              rdfs:domain unamed:address ;
+              rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:subdistrict
+k_addr:subdistrict rdf:type owl:DatatypeProperty ;
+                   rdfs:domain unamed:address ;
+                   rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_contact:email
+k_contact:email rdf:type owl:DatatypeProperty ;
+                rdfs:domain unamed:contact ;
+                rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_contact:fax
+k_contact:fax rdf:type owl:DatatypeProperty ;
+              rdfs:domain unamed:contact ;
+              rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_contact:phone
+k_contact:phone rdf:type owl:DatatypeProperty ;
+                rdfs:domain unamed:contact ;
+                rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_contact:webcam
+k_contact:webcam rdf:type owl:DatatypeProperty ;
+                 rdfs:domain unamed:contact ;
+                 rdfs:range xsd:string .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_contact:website
+k_contact:website rdf:type owl:DatatypeProperty ;
+                  rdfs:domain unamed:contact ;
+                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdf:type owl:Class .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#ArabicRestaurant
+unamed:ArabicRestaurant rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#AsianRestaurant
+unamed:AsianRestaurant rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#ChineseRestaurant
+unamed:ChineseRestaurant rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#FrenchRestaurant
+unamed:FrenchRestaurant rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#GermanRestaurant
+unamed:GermanRestaurant rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#GreekRestaurant
+unamed:GreekRestaurant rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#IndianRestaurant
+unamed:IndianRestaurant rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#ItalianRestaurant
+unamed:ItalianRestaurant rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#SpanishRestaurant
+unamed:SpanishRestaurant rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#ThaiRestaurant
+unamed:ThaiRestaurant rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:v_restaurant .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#address
+unamed:address rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_address
+unamed:can_have_address rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_contact
+unamed:can_have_contact rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_atm
+unamed:can_have_k_atm rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_beds
+unamed:can_have_k_beds rdf:type owl:Class ;
+                       rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_bic
+unamed:can_have_k_bic rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_brand
+unamed:can_have_k_brand rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_capacity
+unamed:can_have_k_capacity rdf:type owl:Class ;
+                           rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_castle_type
+unamed:can_have_k_castle_type rdf:type owl:Class ;
+                              rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_collection_times
+unamed:can_have_k_collection_times rdf:type owl:Class ;
+                                   rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_cuisine
+unamed:can_have_k_cuisine rdf:type owl:Class ;
+                          rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_currency
+unamed:can_have_k_currency rdf:type owl:Class ;
+                           rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_drive-through
+unamed:can_have_k_drive-through rdf:type owl:Class ;
+                                rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_fee
+unamed:can_have_k_fee rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_name
+unamed:can_have_k_name rdf:type owl:Class ;
+                       rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_network
+unamed:can_have_k_network rdf:type owl:Class ;
+                          rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_opening_hours
+unamed:can_have_k_opening_hours rdf:type owl:Class ;
+                                rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_operator
+unamed:can_have_k_operator rdf:type owl:Class ;
+                           rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_ref
+unamed:can_have_k_ref rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_rooms
+unamed:can_have_k_rooms rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_ruins
+unamed:can_have_k_ruins rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_self_service
+unamed:can_have_k_self_service rdf:type owl:Class ;
+                               rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_service_times
+unamed:can_have_k_service_times rdf:type owl:Class ;
+                                rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_smokefree
+unamed:can_have_k_smokefree rdf:type owl:Class ;
+                            rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_k_smoking
+unamed:can_have_k_smoking rdf:type owl:Class ;
+                          rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#contact
+unamed:contact rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#decision
+unamed:decision rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_aerialway
+unamed:k_aerialway rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_aerialway_v_station
+unamed:k_aerialway_v_station rdf:type owl:Class ;
+                             rdfs:subClassOf unamed:k_aerialway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_aeroway
+unamed:k_aeroway rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_amenity
+unamed:k_amenity rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_bicycle_parking
+unamed:k_bicycle_parking rdf:type owl:Class ;
+                         rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_boundary
+unamed:k_boundary rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_boundary_v_political
+unamed:k_boundary_v_political rdf:type owl:Class ;
+                              rdfs:subClassOf unamed:k_boundary .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_castle_type
+unamed:k_castle_type rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_cuisine
+unamed:k_cuisine rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_cuisine_v_seafood
+unamed:k_cuisine_v_seafood rdf:type owl:Class ;
+                           rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_denomination
+unamed:k_denomination rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_emergency
+unamed:k_emergency rdf:type owl:Class ;
+                   rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_emergency_v_no
+unamed:k_emergency_v_no rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_emergency .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_emergency_v_yes
+unamed:k_emergency_v_yes rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:k_emergency .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_geological
+unamed:k_geological rdf:type owl:Class ;
+                    rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_highway
+unamed:k_highway rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_historic
+unamed:k_historic rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_landuse
+unamed:k_landuse rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_leisure
+unamed:k_leisure rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_man_made
+unamed:k_man_made rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_military
+unamed:k_military rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_natural
+unamed:k_natural rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_power
+unamed:k_power rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_power_source
+unamed:k_power_source rdf:type owl:Class ;
+                      rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_power_source_v_no
+unamed:k_power_source_v_no rdf:type owl:Class ;
+                           rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_power_v_station
+unamed:k_power_v_station rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_power_v_tower
+unamed:k_power_v_tower rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_railway
+unamed:k_railway rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_railway_v_tram
+unamed:k_railway_v_tram rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_religion
+unamed:k_religion rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_route
+unamed:k_route rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_route_v_bicycle
+unamed:k_route_v_bicycle rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_route_v_subway
+unamed:k_route_v_subway rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_shop
+unamed:k_shop rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_sport
+unamed:k_sport rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_station
+unamed:k_station rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_tourism
+unamed:k_tourism rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_type
+unamed:k_type rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_waterway
+unamed:k_waterway rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#spatial_location
+unamed:spatial_location rdf:type owl:Class ;
+                        rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#track
+unamed:track rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_abandoned
+unamed:v_abandoned rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_administrative
+unamed:v_administrative rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_boundary .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_aerodrome
+unamed:v_aerodrome rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_airfield
+unamed:v_airfield rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_airport
+unamed:v_airport rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_alpine_hut
+unamed:v_alpine_hut rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ambulance_station
+unamed:v_ambulance_station rdf:type owl:Class ;
+                           rdfs:subClassOf unamed:k_emergency .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_american
+unamed:v_american rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_anchors
+unamed:v_anchors rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_apron
+unamed:v_apron rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_arabic
+unamed:v_arabic rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_archaeological_site
+unamed:v_archaeological_site rdf:type owl:Class ;
+                             rdfs:subClassOf unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_arena
+unamed:v_arena rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_arts_centre
+unamed:v_arts_centre rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:can_have_address ,
+                                     unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_artwork
+unamed:v_artwork rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_asian
+unamed:v_asian rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_athletics
+unamed:v_athletics rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_atm
+unamed:v_atm rdf:type owl:Class ;
+             rdfs:subClassOf unamed:can_have_k_currency ,
+                             unamed:can_have_k_fee ,
+                             unamed:can_have_k_network ,
+                             unamed:can_have_k_operator ,
+                             unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_attraction
+unamed:v_attraction rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bahai
+unamed:v_bahai rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bakery
+unamed:v_bakery rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_k_name ,
+                                unamed:can_have_k_opening_hours ,
+                                unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ballet
+unamed:v_ballet rdf:type owl:Class ;
+                rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bank
+unamed:v_bank rdf:type owl:Class ;
+              rdfs:subClassOf unamed:can_have_address ,
+                              unamed:can_have_k_atm ,
+                              unamed:can_have_k_bic ,
+                              unamed:can_have_k_drive-through ,
+                              unamed:can_have_k_opening_hours ,
+                              unamed:can_have_k_operator ,
+                              unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_baptist
+unamed:v_baptist rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_denomination .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bar
+unamed:v_bar rdf:type owl:Class ;
+             rdfs:subClassOf unamed:can_have_address ,
+                             unamed:can_have_contact ,
+                             unamed:can_have_k_cuisine ,
+                             unamed:can_have_k_opening_hours ,
+                             unamed:can_have_k_smokefree ,
+                             unamed:can_have_k_smoking ,
+                             unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_barracks
+unamed:v_barracks rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_baseball
+unamed:v_baseball rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_basketball
+unamed:v_basketball rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bay
+unamed:v_bay rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_beach
+unamed:v_beach rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_beauty
+unamed:v_beauty rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bench
+unamed:v_bench rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_beverages
+unamed:v_beverages rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bicycle
+unamed:v_bicycle rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bicycle_parking
+unamed:v_bicycle_parking rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:can_have_k_capacity ,
+                                         unamed:can_have_k_fee ,
+                                         unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bicycle_rental
+unamed:v_bicycle_rental rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:can_have_address ,
+                                        unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_biergarten
+unamed:v_biergarten rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:can_have_address ,
+                                    unamed:can_have_k_cuisine ,
+                                    unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bombcrater
+unamed:v_bombcrater rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_books
+unamed:v_books rdf:type owl:Class ;
+               rdfs:subClassOf unamed:can_have_k_name ,
+                               unamed:can_have_k_opening_hours ,
+                               unamed:can_have_k_operator ,
+                               unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_boulevard
+unamed:v_boulevard rdf:type owl:Class ;
+                   rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_boundary
+unamed:v_boundary rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_boundary_stone
+unamed:v_boundary_stone rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bowls
+unamed:v_bowls rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bridleway
+unamed:v_bridleway rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_buddhist
+unamed:v_buddhist rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_building
+unamed:v_building rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bunker
+unamed:v_bunker rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bureau_de_change
+unamed:v_bureau_de_change rdf:type owl:Class ;
+                          rdfs:subClassOf unamed:can_have_address ,
+                                          unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_burg
+unamed:v_burg rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_castle_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_burger
+unamed:v_burger rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bus
+unamed:v_bus rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bus_station
+unamed:v_bus_station rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:can_have_k_operator ,
+                                     unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_bus_stop
+unamed:v_bus_stop rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_butcher
+unamed:v_butcher rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_cabaret
+unamed:v_cabaret rdf:type owl:Class ;
+                 rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_cable_car
+unamed:v_cable_car rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_aerialway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_cafe
+unamed:v_cafe rdf:type owl:Class ;
+              rdfs:subClassOf unamed:can_have_address ,
+                              unamed:can_have_k_cuisine ,
+                              unamed:can_have_k_opening_hours ,
+                              unamed:can_have_k_smokefree ,
+                              unamed:can_have_k_smoking ,
+                              unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_camp_site
+unamed:v_camp_site rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_canal
+unamed:v_canal rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_car
+unamed:v_car rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_car_rental
+unamed:v_car_rental rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:can_have_address ,
+                                    unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_car_repair
+unamed:v_car_repair rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_car_sharing
+unamed:v_car_sharing rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_car_wash
+unamed:v_car_wash rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:can_have_address ,
+                                  unamed:can_have_k_opening_hours ,
+                                  unamed:can_have_k_operator ,
+                                  unamed:can_have_k_self_service ,
+                                  unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_caravan_site
+unamed:v_caravan_site rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_casino
+unamed:v_casino rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_address ,
+                                unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_castle
+unamed:v_castle rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_k_castle_type ,
+                                unamed:can_have_k_name ,
+                                unamed:can_have_k_ruins ,
+                                unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_catholic
+unamed:v_catholic rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_denomination .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_cave_entrance
+unamed:v_cave_entrance rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_chair_lift
+unamed:v_chair_lift rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_aerialway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_chalet
+unamed:v_chalet rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_chamber_music
+unamed:v_chamber_music rdf:type owl:Class ;
+                       rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_charging_station
+unamed:v_charging_station rdf:type owl:Class ;
+                          rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_chemist
+unamed:v_chemist rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_chinese
+unamed:v_chinese rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_christian
+unamed:v_christian rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_cinema
+unamed:v_cinema rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_k_name ,
+                                unamed:can_have_k_operator ,
+                                unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_civil
+unamed:v_civil rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_boundary .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_cliff
+unamed:v_cliff rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_climbing
+unamed:v_climbing rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_clothes
+unamed:v_clothes rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_coal
+unamed:v_coal rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_coastline
+unamed:v_coastline rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_coffee_shop
+unamed:v_coffee_shop rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_college
+unamed:v_college rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_comedy
+unamed:v_comedy rdf:type owl:Class ;
+                rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_common
+unamed:v_common rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_community_centre
+unamed:v_community_centre rdf:type owl:Class ;
+                          rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_computer
+unamed:v_computer rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_convenience
+unamed:v_convenience rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_courthouse
+unamed:v_courthouse rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_crossing
+unamed:v_crossing rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_cycleway
+unamed:v_cycleway rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_dam
+unamed:v_dam rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_dance
+unamed:v_dance rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_danger_area
+unamed:v_danger_area rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_dedicated
+unamed:v_dedicated rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:decision .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_defensive
+unamed:v_defensive rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_castle_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_deli
+unamed:v_deli rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_dentist
+unamed:v_dentist rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_department_store
+unamed:v_department_store rdf:type owl:Class ;
+                          rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_detour
+unamed:v_detour rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_disused
+unamed:v_disused rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ditch
+unamed:v_ditch rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_doctors
+unamed:v_doctors rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_dog_park
+unamed:v_dog_park rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_doityourself
+unamed:v_doityourself rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_drag_lift
+unamed:v_drag_lift rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_aerialway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_drain
+unamed:v_drain rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_drama
+unamed:v_drama rdf:type owl:Class ;
+               rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_drinking_water
+unamed:v_drinking_water rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_dry_cleaning
+unamed:v_dry_cleaning rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_electronics
+unamed:v_electronics rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_emergency_phone
+unamed:v_emergency_phone rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_environmental_hazard
+unamed:v_environmental_hazard rdf:type owl:Class ;
+                              rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_equestrian
+unamed:v_equestrian rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fast_food
+unamed:v_fast_food rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:can_have_address ,
+                                   unamed:can_have_k_cuisine ,
+                                   unamed:can_have_k_drive-through ,
+                                   unamed:can_have_k_opening_hours ,
+                                   unamed:can_have_k_smokefree ,
+                                   unamed:can_have_k_smoking ,
+                                   unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fell
+unamed:v_fell rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ferry
+unamed:v_ferry rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ferry_terminal
+unamed:v_ferry_terminal rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_figure
+unamed:v_figure rdf:type owl:Class ;
+                rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fire_hydrant
+unamed:v_fire_hydrant rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_emergency .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fire_station
+unamed:v_fire_station rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:can_have_address ,
+                                      unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fish
+unamed:v_fish rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fishing
+unamed:v_fishing rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fitness_station
+unamed:v_fitness_station rdf:type owl:Class ;
+                         rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_flightpath
+unamed:v_flightpath rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_florist
+unamed:v_florist rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_food_court
+unamed:v_food_court rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_foot
+unamed:v_foot rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_football
+unamed:v_football rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_footway
+unamed:v_footway rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_forest
+unamed:v_forest rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_landuse .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fortress
+unamed:v_fortress rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_castle_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fossil
+unamed:v_fossil rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fountain
+unamed:v_fountain rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_french
+unamed:v_french rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_fuel
+unamed:v_fuel rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_furniture
+unamed:v_furniture rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_garden
+unamed:v_garden rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_garden_centre
+unamed:v_garden_centre rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_gas
+unamed:v_gas rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_gate
+unamed:v_gate rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_generator
+unamed:v_generator rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_german
+unamed:v_german rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_glacier
+unamed:v_glacier rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_golf
+unamed:v_golf rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_golf_course
+unamed:v_golf_course rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_gondola
+unamed:v_gondola rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_aerialway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_goods
+unamed:v_goods rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_aerialway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_grassland
+unamed:v_grassland rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_grave_yard
+unamed:v_grave_yard rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_greek
+unamed:v_greek rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ground_slots
+unamed:v_ground_slots rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_guest_house
+unamed:v_guest_house rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_gymnastics
+unamed:v_gymnastics rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hairdresser
+unamed:v_hairdresser rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_halt
+unamed:v_halt rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hardware
+unamed:v_hardware rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_heath
+unamed:v_heath rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_helipad
+unamed:v_helipad rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hiking
+unamed:v_hiking rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hindu
+unamed:v_hindu rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hockey
+unamed:v_hockey rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hospital
+unamed:v_hospital rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hostel
+unamed:v_hostel rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_address ,
+                                unamed:can_have_contact ,
+                                unamed:can_have_k_beds ,
+                                unamed:can_have_k_operator ,
+                                unamed:can_have_k_rooms ,
+                                unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hotel
+unamed:v_hotel rdf:type owl:Class ;
+               rdfs:subClassOf unamed:can_have_address ,
+                               unamed:can_have_contact ,
+                               unamed:can_have_k_beds ,
+                               unamed:can_have_k_operator ,
+                               unamed:can_have_k_rooms ,
+                               unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_hydro
+unamed:v_hydro rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ice_rink
+unamed:v_ice_rink rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_indian
+unamed:v_indian rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_informal
+unamed:v_informal rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_information
+unamed:v_information rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_international
+unamed:v_international rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_isolated
+unamed:v_isolated rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:decision .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_italian
+unamed:v_italian rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_jain
+unamed:v_jain rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_japanese
+unamed:v_japanese rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_jewelry
+unamed:v_jewelry rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_jewish
+unamed:v_jewish rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_kebap
+unamed:v_kebap rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_kindergarten
+unamed:v_kindergarten rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_kiosk
+unamed:v_kiosk rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_land
+unamed:v_land rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_laundry
+unamed:v_laundry rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_level_crossing
+unamed:v_level_crossing rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_library
+unamed:v_library rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:can_have_address ,
+                                 unamed:can_have_k_opening_hours ,
+                                 unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_line
+unamed:v_line rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_living_street
+unamed:v_living_street rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_lockers
+unamed:v_lockers rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_lutheran
+unamed:v_lutheran rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_denomination .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_mall
+unamed:v_mall rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_marina
+unamed:v_marina rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_marionette
+unamed:v_marionette rdf:type owl:Class ;
+                    rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_maritime
+unamed:v_maritime rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_boundary .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_marketplace
+unamed:v_marketplace rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_marsh
+unamed:v_marsh rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_massage
+unamed:v_massage rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_memorial
+unamed:v_memorial rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_methodist
+unamed:v_methodist rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_denomination .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_mexican
+unamed:v_mexican rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_miniature_golf
+unamed:v_miniature_golf rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_minor_line
+unamed:v_minor_line rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_mobile_phone
+unamed:v_mobile_phone rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_monitoring_station
+unamed:v_monitoring_station rdf:type owl:Class ;
+                            rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_monument
+unamed:v_monument rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_motel
+unamed:v_motel rdf:type owl:Class ;
+               rdfs:subClassOf unamed:can_have_address ,
+                               unamed:can_have_k_beds ,
+                               unamed:can_have_k_operator ,
+                               unamed:can_have_k_rooms ,
+                               unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_motorway
+unamed:v_motorway rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_motorway_link
+unamed:v_motorway_link rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_mtb
+unamed:v_mtb rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_mud
+unamed:v_mud rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_multi
+unamed:v_multi rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_multifaith
+unamed:v_multifaith rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_multipolygon
+unamed:v_multipolygon rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_museum
+unamed:v_museum rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_address ,
+                                unamed:can_have_contact ,
+                                unamed:can_have_k_name ,
+                                unamed:can_have_k_operator ,
+                                unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_musical
+unamed:v_musical rdf:type owl:Class ;
+                 rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_muslim
+unamed:v_muslim rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_national_park
+unamed:v_national_park rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_boundary .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_nature_reserve
+unamed:v_nature_reserve rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_naval_base
+unamed:v_naval_base rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_nightclub
+unamed:v_nightclub rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:can_have_address ,
+                                   unamed:can_have_contact ,
+                                   unamed:can_have_k_opening_hours ,
+                                   unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_no
+unamed:v_no rdf:type owl:Class ;
+            rdfs:subClassOf yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_nuclear
+unamed:v_nuclear rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_nuclear_explosion_site
+unamed:v_nuclear_explosion_site rdf:type owl:Class ;
+                                rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_opera
+unamed:v_opera rdf:type owl:Class ;
+               rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_optician
+unamed:v_optician rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_organic
+unamed:v_organic rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_orthodox
+unamed:v_orthodox rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_denomination .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_outdoor
+unamed:v_outdoor rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pagan
+unamed:v_pagan rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_palaeontological_site
+unamed:v_palaeontological_site rdf:type owl:Class ;
+                               rdfs:subClassOf unamed:k_geological .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_park
+unamed:v_park rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_parking
+unamed:v_parking rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:can_have_k_capacity ,
+                                 unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pastafarian
+unamed:v_pastafarian rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_path
+unamed:v_path rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_peak
+unamed:v_peak rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pedestrian
+unamed:v_pedestrian rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pet
+unamed:v_pet rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pharmacy
+unamed:v_pharmacy rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:can_have_address ,
+                                  unamed:can_have_k_drive-through ,
+                                  unamed:can_have_k_opening_hours ,
+                                  unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_philharmonic
+unamed:v_philharmonic rdf:type owl:Class ;
+                      rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_phone
+unamed:v_phone rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_emergency .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_photovoltaic
+unamed:v_photovoltaic rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_picnic_site
+unamed:v_picnic_site rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_picnic_table
+unamed:v_picnic_table rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pier
+unamed:v_pier rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pipeline
+unamed:v_pipeline rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_piste
+unamed:v_piste rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pitch
+unamed:v_pitch rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pizza
+unamed:v_pizza rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_place_of_worship
+unamed:v_place_of_worship rdf:type owl:Class ;
+                          rdfs:subClassOf unamed:can_have_address ,
+                                          unamed:can_have_k_opening_hours ,
+                                          unamed:can_have_k_service_times ,
+                                          unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_platform
+unamed:v_platform rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_playground
+unamed:v_playground rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pole
+unamed:v_pole rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_police
+unamed:v_police rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_address ,
+                                unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_political
+unamed:v_political rdf:type owl:Class ;
+                   rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_post_box
+unamed:v_post_box rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:can_have_k_brand ,
+                                  unamed:can_have_k_collection_times ,
+                                  unamed:can_have_k_operator ,
+                                  unamed:can_have_k_ref ,
+                                  unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_post_office
+unamed:v_post_office rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:can_have_address ,
+                                     unamed:can_have_k_atm ,
+                                     unamed:can_have_k_opening_hours ,
+                                     unamed:can_have_k_operator ,
+                                     unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_power
+unamed:v_power rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_primary
+unamed:v_primary rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_primary_link
+unamed:v_primary_link rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_protected_area
+unamed:v_protected_area rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_boundary .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_protestant
+unamed:v_protestant rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_denomination .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pub
+unamed:v_pub rdf:type owl:Class ;
+             rdfs:subClassOf unamed:can_have_address ,
+                             unamed:can_have_contact ,
+                             unamed:can_have_k_cuisine ,
+                             unamed:can_have_k_opening_hours ,
+                             unamed:can_have_k_smokefree ,
+                             unamed:can_have_k_smoking ,
+                             unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_puppet
+unamed:v_puppet rdf:type owl:Class ;
+                rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_pylon
+unamed:v_pylon rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_aerialway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_raceway
+unamed:v_raceway rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_rail
+unamed:v_rail rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_railway
+unamed:v_railway rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_range
+unamed:v_range rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_military .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_recreation_ground
+unamed:v_recreation_ground rdf:type owl:Class ;
+                           rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_recycling
+unamed:v_recycling rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_reef
+unamed:v_reef rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_regional
+unamed:v_regional rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_renewable
+unamed:v_renewable rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_residential
+unamed:v_residential rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_restaurant
+unamed:v_restaurant rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:can_have_address ,
+                                    unamed:can_have_contact ,
+                                    unamed:can_have_k_cuisine ,
+                                    unamed:can_have_k_opening_hours ,
+                                    unamed:can_have_k_operator ,
+                                    unamed:can_have_k_smokefree ,
+                                    unamed:can_have_k_smoking ,
+                                    unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_restriction
+unamed:v_restriction rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_river
+unamed:v_river rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_riverbank
+unamed:v_riverbank rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_road
+unamed:v_road rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_rock
+unamed:v_rock rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_rocks
+unamed:v_rocks rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_route
+unamed:v_route rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ruins
+unamed:v_ruins rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_runway
+unamed:v_runway rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_sand
+unamed:v_sand rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_sauna
+unamed:v_sauna rdf:type owl:Class ;
+               rdfs:subClassOf unamed:can_have_address ,
+                               unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_schloss
+unamed:v_schloss rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_castle_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_school
+unamed:v_school rdf:type owl:Class ;
+                rdfs:subClassOf unamed:can_have_address ,
+                                unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_scientologist
+unamed:v_scientologist rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_scrub
+unamed:v_scrub rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_seafood
+unamed:v_seafood rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_secondary
+unamed:v_secondary rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_secondary_link
+unamed:v_secondary_link rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_seperated
+unamed:v_seperated rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:decision .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_service
+unamed:v_service rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_services
+unamed:v_services rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_shadow_play
+unamed:v_shadow_play rdf:type owl:Class ;
+                     rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_shed
+unamed:v_shed rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_shelter
+unamed:v_shelter rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_shinto
+unamed:v_shinto rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_shoes
+unamed:v_shoes rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_sikh
+unamed:v_sikh rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_site
+unamed:v_site rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_skateboard
+unamed:v_skateboard rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_skating
+unamed:v_skating rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_ski
+unamed:v_ski rdf:type owl:Class ;
+             rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_skiing
+unamed:v_skiing rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_slipway
+unamed:v_slipway rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_soccer
+unamed:v_soccer rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_spanish
+unamed:v_spanish rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_spiritualist
+unamed:v_spiritualist rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_sports
+unamed:v_sports rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_sports_centre
+unamed:v_sports_centre rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_spring
+unamed:v_spring rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_spur
+unamed:v_spur rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_stadium
+unamed:v_stadium rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_stand_up_comedy
+unamed:v_stand_up_comedy rdf:type owl:Class ;
+                         rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_stands
+unamed:v_stands rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_stately
+unamed:v_stately rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_castle_type .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_station
+unamed:v_station rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_stationery
+unamed:v_stationery rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_steps
+unamed:v_steps rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_storage_tank
+unamed:v_storage_tank rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_stream
+unamed:v_stream rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_sub_station
+unamed:v_sub_station rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_subway
+unamed:v_subway rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_station .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_supermarket
+unamed:v_supermarket rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:can_have_k_name ,
+                                     unamed:can_have_k_opening_hours ,
+                                     unamed:can_have_k_operator ,
+                                     unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_survey_point
+unamed:v_survey_point rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_sushi
+unamed:v_sushi rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_swimming
+unamed:v_swimming rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_swimming_pool
+unamed:v_swimming_pool rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:can_have_address ,
+                                       unamed:k_amenity ,
+                                       unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_table_tennis
+unamed:v_table_tennis rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_taoist
+unamed:v_taoist rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_taxi
+unamed:v_taxi rdf:type owl:Class ;
+              rdfs:subClassOf unamed:can_have_k_capacity ,
+                              unamed:can_have_k_operator ,
+                              unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_taxiway
+unamed:v_taxiway rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_telephone
+unamed:v_telephone rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_tennis
+unamed:v_tennis rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_sport .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_terminal
+unamed:v_terminal rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_aeroway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_tertiary
+unamed:v_tertiary rdf:type owl:Class ;
+                  rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_thai
+unamed:v_thai rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_theatre
+unamed:v_theatre rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:can_have_address ,
+                                 unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_theme_park
+unamed:v_theme_park rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_toilets
+unamed:v_toilets rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_tower
+unamed:v_tower rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_town_hall
+unamed:v_town_hall rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_toys
+unamed:v_toys rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_track
+unamed:v_track rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_train
+unamed:v_train rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_tram
+unamed:v_tram rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_tram_stop
+unamed:v_tram_stop rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_railway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_transformer
+unamed:v_transformer rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_power .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_travel_agency
+unamed:v_travel_agency rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_tree
+unamed:v_tree rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_trolleybus
+unamed:v_trolleybus rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_truck
+unamed:v_truck rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_trunk
+unamed:v_trunk rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_trunk_link
+unamed:v_trunk_link rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_turkish
+unamed:v_turkish rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_unclassified
+unamed:v_unclassified rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_highway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_unitarian
+unamed:v_unitarian rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_university
+unamed:v_university rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_valley
+unamed:v_valley rdf:type owl:Class ;
+                rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_varieté
+unamed:v_varieté rdf:type owl:Class ;
+                 rdfs:subClassOf k_theatre:genre .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_vegetarian
+unamed:v_vegetarian rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_cuisine .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_veterinary
+unamed:v_veterinary rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:can_have_address ,
+                                    unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_video
+unamed:v_video rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_shop .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_viewpoint
+unamed:v_viewpoint rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_volcano
+unamed:v_volcano rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_walking
+unamed:v_walking rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_route .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_wall_loops
+unamed:v_wall_loops rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_bicycle_parking .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_waste_basket
+unamed:v_waste_basket rdf:type owl:Class ;
+                      rdfs:subClassOf unamed:k_amenity .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_wastewater_plant
+unamed:v_wastewater_plant rdf:type owl:Class ;
+                          rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_water
+unamed:v_water rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_water_park
+unamed:v_water_park rdf:type owl:Class ;
+                    rdfs:subClassOf unamed:k_leisure .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_water_tower
+unamed:v_water_tower rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_waterfall
+unamed:v_waterfall rdf:type owl:Class ;
+                   rdfs:subClassOf unamed:k_waterway .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_wayside_cross
+unamed:v_wayside_cross rdf:type owl:Class ;
+                       rdfs:subClassOf unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_wayside_shrine
+unamed:v_wayside_shrine rdf:type owl:Class ;
+                        rdfs:subClassOf unamed:k_historic .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_wetland
+unamed:v_wetland rdf:type owl:Class ;
+                 rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_wind
+unamed:v_wind rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_power_source .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_wood
+unamed:v_wood rdf:type owl:Class ;
+              rdfs:subClassOf unamed:k_natural .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_works
+unamed:v_works rdf:type owl:Class ;
+               rdfs:subClassOf unamed:k_man_made .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_yes
+unamed:v_yes rdf:type owl:Class ;
+             rdfs:subClassOf yes:no .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_zoo
+unamed:v_zoo rdf:type owl:Class ;
+             rdfs:subClassOf unamed:can_have_address ,
+                             unamed:can_have_contact ,
+                             unamed:can_have_k_opening_hours ,
+                             unamed:k_tourism .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#v_zoroastrian
+unamed:v_zoroastrian rdf:type owl:Class ;
+                     rdfs:subClassOf unamed:k_religion .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_theatre:genre
+k_theatre:genre rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing .
+
+
+###  https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#yes/no
+yes:no rdf:type owl:Class ;
+       rdfs:subClassOf unamed:decision .
+
+
+###  Generated by the OWL API (version 4.5.6.2018-09-06T00:27:41Z) https://github.com/owlcs/owlapi

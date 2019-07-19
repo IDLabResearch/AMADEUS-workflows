@@ -1,0 +1,22 @@
+#Processed by EYE v19.0702.2313 josd
+#eye mathias.n3 context.n3 descriptions.n3 gps-plugin_nosteptwice.n3 --query gps-query.n3 --nope
+
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+
+_:sk_0 gps:path (((:home :krook :walk) (:krook :gent_sintpieters :bike) (:gent_sintpieters :brussel_brusselNoord :train_with_bike) (:brussel_brusselNoord :vrt :bike) (:vrt :brussel_brusselNoord :bike) (:brussel_brusselNoord :gent_sintpieters :train_with_bike) (:gent_sintpieters :home :bike)) 155.0 7.0 0.9320653479069899 0.9320653479069899).
+_:sk_1 gps:path (((:home :krook :walk) (:krook :gent_sintpieters :bike) (:gent_sintpieters :brussel_brusselNoord :train_with_bike) (:brussel_brusselNoord :vrt :bike) (:vrt :brussel_brusselCentraal :bike) (:brussel_brusselCentraal :gent_sintpieters :train_with_bike) (:gent_sintpieters :home :bike)) 155.0 7.0 0.9320653479069899 0.9320653479069899).
+_:sk_2 gps:path (((:home :krook :walk) (:krook :gent_sintpieters :bike) (:gent_sintpieters :brussel_brusselCentraal :train_with_bike) (:brussel_brusselCentraal :vrt :bike) (:vrt :brussel_brusselNoord :bike) (:brussel_brusselNoord :gent_sintpieters :train_with_bike) (:gent_sintpieters :home :bike)) 155.0 7.0 0.9320653479069899 0.9320653479069899).
+_:sk_3 gps:path (((:home :krook :walk) (:krook :gent_sintpieters :bike) (:gent_sintpieters :brussel_brusselCentraal :train_with_bike) (:brussel_brusselCentraal :vrt :bike) (:vrt :brussel_brusselCentraal :bike) (:brussel_brusselCentraal :gent_sintpieters :train_with_bike) (:gent_sintpieters :home :bike)) 155.0 7.0 0.9320653479069899 0.9320653479069899).
+
+#2019-07-04T14:32:11.834Z in=193 out=4 ent=4 step=4 brake=2 inf=69310563 sec=14.772 inf/sec=4692023
+#ENDS
+

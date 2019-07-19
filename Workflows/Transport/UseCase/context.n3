@@ -1,0 +1,82 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+
+:krook a :Location;
+       :longitude 51.048920;
+       :latitude 3.728874.
+
+:home a :Location;
+     :longitude 51.054556;
+     :latitude 3.725333.
+
+:vrt a :Location;
+     :longitude 50.853085;
+     :latitude 4.402704.
+
+#bus stops (I hope that these are modeled in some vocabulary of Pieter?)
+:gent_vogelmarkt a :Tramstop, :Busstop;
+                 a :Location;
+                 :longitude 51.050602;
+                 :latitude 3.725649. 
+:gent_sintpieters a :Tramstop, :Busstop, :Trainstop, :Location;
+                 :longitude 51.037086;
+                 :latitude 3.709679.
+
+:brussel_brusselNoord a :Trainstop, :Location;
+                 :longitude 50.860359;
+                 :latitude 4.360966.
+:brussel_gareDuNord a :Tramstop, :Busstop, :Location;
+                 :longitude 50.860730;
+                 :latitude 4.360241.
+
+:brussel_meiser a :Tramstop, :Busstop, :Location;
+                 :longitude 50.855386;
+                 :latitude 4.396973.
+:gent_korenmarkt a :Tramstop, :Location;
+                 :longitude 51.053999;
+                 :latitude 3.723286.
+
+
+:brussel_brusselCentraal a :Trainstop, :Location;
+                 :longitude 50.845503;
+                 :latitude 4.357023.
+
+
+:brussel_centraalstation a :Busstop, :Location;
+                 :longitude 50.845835;
+                 :latitude  4.357286.
+
+:brussel_max-plasky a :Busstop, :Location;
+                 :longitude 50.850988; 
+                 :latitude 4.397039.
+
+
+:brussel_brusselCentraal :verycloseTo :brussel_centraalstation.
+:brussel_centraalstation  :verycloseTo :brussel_brusselCentraal .
+:brussel_brusselNoord :verycloseTo :brussel_gareDuNord. 
+:brussel_gareDuNord :verycloseTo :brussel_brusselNoord.
+
+{?x :walkable ?y} <= {?x :veryClose ?y. ("!") e:derive true.}.
+{?x :walkable ?y} <= {?x :longitude ?l. ?y :longitude ?ll. (?ll ?l ) math:difference ?d. ?d math:absoluteValue ?dd. (?dd ?x ?y) :check 0.01.  }.
+
+{(?d ?x ?y) :check ?value.} <= {?d math:greaterThan ?value. ("!") e:derive true. ("fail") e:derive true.}.
+{(?d ?x ?y) :check ?value.} <= {?x :latitude ?l. ?y :latitude ?ll. (?ll ?l ) math:difference ?d2. ?d2 math:absoluteValue ?dd2. (?d ?dd2) :checkd ?value.  }.
+
+{(?d ?d2) :checkd ?value. } <= {?d2 math:greaterThan ?value. ("!") e:derive true. ("fail") e:derive true.}.
+{(?d ?d2) :checkd ?value. } <= {}.
+
+{?x :bikeable ?y} <= {?x :walkable ?y. ("!") e:derive true.}.
+{?x :bikeable ?y} <= {?x :longitude ?l. ?y :longitude ?ll. (?ll ?l ) math:difference ?d. ?d math:absoluteValue ?dd.    
+#_:x e:trace ?dd. 
+(?dd ?x ?y) :check 0.4.  }.
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX ns1: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+
+{:walk ns1:description ({?U_0 :location :krook} true {?U_0 :location :home. ?U_0 :visited :home} (:krook :home :walk) 900 1 0.99 0.99)} <= {?U_0 a :User}.
+
+
+{:walk ns1:description ({?U_3 :location :home} true {?U_3 :location :krook. ?U_3 :visited :krook} (:home :krook :walk ) 900 1 0.99 0.99)} <= {?U_3 a :User}.
+
+{:bike ns1:description ({?U_56 :location :krook. ?U_57 :bikelocation :krook} true {?U_56 :location :gent_sintpieters. ?U_57 :bikelocation :gent_sintpieters. ?U_56 :visited :gent_sintpieters} (:krook :gent_sintpieters :bike) 900 1 0.99 0.99)} <= {?U_56 a :User. ?U_57 a :Bike. ?U_56 :owns ?U_57}.
+
+{:train_with_bike ns1:description ({?U_185 :location :gent_sintpieters. ?U_186 :bikelocation :gent_sintpieters} true {?U_185 :location :brussel_brusselNoord. ?U_186 :bikelocation :brussel_brusselNoord. ?U_185 :visited :brussel_brusselNoord} (:gent_sintpieters :brussel_brusselNoord :train_with_bike) 1200 1 0.99 0.99)} <= {?U_185 a :User. ?U_186 a :Bike. ?U_185 :owns ?U_186}.

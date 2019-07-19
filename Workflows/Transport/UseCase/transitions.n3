@@ -1,0 +1,48 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+
+
+{
+?con a lc:Connection;
+     lc:departureStop ?stop;
+     lc:departureTime ?dtime;
+     lc:arrivalTime ?atime;
+     lc:arrivalStop ?new;
+     gtfs:trip ?trip.
+(?atime ?dtime) math:difference ?dur
+}
+=>
+{
+  {?trip gps:description (
+                          {
+                          ?user :location ?stop.
+                          ?user :time ?time.
+                          }
+                          {}
+                          {
+                          ?user :location ?new.
+                          ?user :time ?atime.
+                          }
+                          #action name
+                          ?con
+                          #Duration
+                          ?dur
+                          #cost
+                          1
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+   ?time math:notGreaterThan ?dtime.
+  }
+}.

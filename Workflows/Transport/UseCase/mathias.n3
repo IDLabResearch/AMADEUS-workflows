@@ -1,0 +1,28 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+
+
+
+:mathias a :User.
+"2019-06-17T12:20:00.000Z"^^xsd:dateTime :time true.
+
+# Mathias is at home (Botermarkt 1, 9000 Gent)
+:mathias :location :home.
+
+:mathias :owns :redBike.
+
+:redBike a :Bike;
+         :bikelocation :krook.
+
+
+:mathias :walkLimit 15.
+
+#not the most elegant way to solve the problem, will have to think about it.
+:vrt a :interimGoal .
+
+
+

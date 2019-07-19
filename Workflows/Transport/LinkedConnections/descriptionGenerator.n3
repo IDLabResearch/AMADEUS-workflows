@@ -1,0 +1,50 @@
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix lc:    <http://semweb.mmlab.be/ns/linkedconnections#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix gtfs:  <http://vocab.gtfs.org/terms#> .
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+
+
+
+
+
+{
+?con a lc:Connection;
+     lc:departureStop ?stop;
+     lc:departureTime ?dtime;
+     lc:arrivalTime ?atime;
+     lc:arrivalStop ?new;
+     gtfs:trip ?trip.
+(?atime ?dtime) math:difference ?dur
+}
+=>
+{
+  {?trip gps:description (
+                          {
+                          ?user :location ?stop.
+                          ?user :time ?time.
+                          }
+                          {}
+                          {
+                          ?user :location ?new.
+                          ?user :time ?atime.
+                          }
+                          #action name
+                          ?con
+                          #Duration
+                          ?dur
+                          #cost
+                          1
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+   ?time math:notGreaterThan ?dtime.
+  }
+}.

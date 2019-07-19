@@ -1,0 +1,85 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX ns1: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+
+{:walk ns1:description ({?U_0 :location :krook} true {?U_0 :location :home. ?U_0 :visited :home} (:krook :home :walk) 900 1 0.99 0.99)} <= {?U_0 a :User}.
+{:walk ns1:description ({?U_1 :location :krook} true {?U_1 :location :gent_sintpieters. ?U_1 :visited :gent_sintpieters} (:krook :gent_sintpieters :walk) 900 1 0.99 0.99)} <= {?U_1 a :User}.
+{:walk ns1:description ({?U_2 :location :krook} true {?U_2 :location :gent_korenmarkt. ?U_2 :visited :gent_korenmarkt} (:krook :gent_korenmarkt :walk) 900 1 0.99 0.99)} <= {?U_2 a :User}.
+{:walk ns1:description ({?U_3 :location :home} true {?U_3 :location :krook. ?U_3 :visited :krook} (:home :krook :walk ) 900 1 0.99 0.99)} <= {?U_3 a :User}.
+{:walk ns1:description ({?U_4 :location :home} true {?U_4 :location :gent_sintpieters. ?U_4 :visited :gent_sintpieters} (:home :gent_sintpieters :walk) 900 1 0.99 0.99)} <= {?U_4 a :User}.
+{:walk ns1:description ({?U_5 :location :home} true {?U_5 :location :gent_korenmarkt. ?U_5 :visited :gent_korenmarkt} (:home :gent_korenmarkt :walk) 900 1 0.99 0.99)} <= {?U_5 a :User}.
+{:walk ns1:description ({?U_6 :location :vrt} true {?U_6 :location :brussel_brusselNoord. ?U_6 :visited :brussel_brusselNoord} (:vrt :brussel_brusselNoord :walk) 900 1 0.99 0.99)} <= {?U_6 a :User}.
+{:walk ns1:description ({?U_7 :location :vrt} true {?U_7 :location :brussel_gareDuNord. ?U_7 :visited :brussel_gareDuNord} (:vrt :brussel_gareDuNord :walk) 900 1 0.99 0.99)} <= {?U_7 a :User}.
+{:walk ns1:description ({?U_8 :location :vrt} true {?U_8 :location :brussel_meiser. ?U_8 :visited :brussel_meiser} (:vrt :brussel_meiser :walk) 900 1 0.99 0.99)} <= {?U_8 a :User}.
+{:walk ns1:description ({?U_9 :location :vrt} true {?U_9 :location :brussel_brusselCentraal. ?U_9 :visited :brussel_brusselCentraal} (:vrt :brussel_brusselCentraal :walk) 900 1 0.99 0.99)} <= {?U_9 a :User}.
+{:walk ns1:description ({?U_10 :location :vrt} true {?U_10 :location :brussel_centraalstation. ?U_10 :visited :brussel_centraalstation} (:vrt :brussel_centraalstation :walk) 900 1 0.99 0.99)} <= {?U_10 a :User}.
+{:walk ns1:description ({?U_11 :location :vrt} true {?U_11 :location :brussel_max-plasky. ?U_11 :visited :brussel_max-plasky} (:vrt :brussel_max-plasky :walk) 900 1 0.99 0.99)} <= {?U_11 a :User}.
+{:walk ns1:description ({?U_12 :location :gent_sintpieters} true {?U_12 :location :krook. ?U_12 :visited :krook} (:gent_sintpieters :krook :walk) 900 1 0.99 0.99)} <= {?U_12 a :User}.
+{:walk ns1:description ({?U_13 :location :gent_sintpieters} true {?U_13 :location :home. ?U_13 :visited :home} (:gent_sintpieters :home :walk) 900 1 0.99 0.99)} <= {?U_13 a :User}.
+{:walk ns1:description ({?U_14 :location :gent_sintpieters} true {?U_14 :location :gent_korenmarkt. ?U_14 :visited :gent_korenmarkt} (:gent_sintpieters :gent_korenmarkt :walk) 900 1 0.99 0.99)} <= {?U_14 a :User}.
+{:walk ns1:description ({?U_15 :location :brussel_brusselNoord} true {?U_15 :location :vrt. ?U_15 :visited :vrt} (:brussel_brusselNoord :vrt :walk) 900 1 0.99 0.99)} <= {?U_15 a :User}.
+{:walk ns1:description ({?U_16 :location :brussel_brusselNoord} true {?U_16 :location :brussel_gareDuNord. ?U_16 :visited :brussel_gareDuNord} (:brussel_brusselNoord :brussel_gareDuNord :walk) 900 1 0.99 0.99)} <= {?U_16 a :User}.
+{:walk ns1:description ({?U_17 :location :brussel_brusselNoord} true {?U_17 :location :brussel_meiser. ?U_17 :visited :brussel_meiser} (:brussel_brusselNoord :brussel_meiser :walk) 900 1 0.99 0.99)} <= {?U_17 a :User}.
+{:walk ns1:description ({?U_18 :location :brussel_brusselNoord} true {?U_18 :location :brussel_brusselCentraal. ?U_18 :visited :brussel_brusselCentraal} (:brussel_brusselNoord :brussel_brusselCentraal :walk) 900 1 0.99 0.99)} <= {?U_18 a :User}.
+{:walk ns1:description ({?U_19 :location :brussel_brusselNoord} true {?U_19 :location :brussel_centraalstation. ?U_19 :visited :brussel_centraalstation} (:brussel_brusselNoord :brussel_centraalstation :walk) 900 1 0.99 0.99)} <= {?U_19 a :User}.
+{:walk ns1:description ({?U_20 :location :brussel_brusselNoord} true {?U_20 :location :brussel_max-plasky. ?U_20 :visited :brussel_max-plasky} (:brussel_brusselNoord :brussel_max-plasky :walk) 900 1 0.99 0.99)} <= {?U_20 a :User}.
+{:walk ns1:description ({?U_21 :location :brussel_gareDuNord} true {?U_21 :location :vrt. ?U_21 :visited :vrt} (:brussel_gareDuNord :vrt :walk) 900 1 0.99 0.99)} <= {?U_21 a :User}.
+{:walk ns1:description ({?U_22 :location :brussel_gareDuNord} true {?U_22 :location :brussel_brusselNoord. ?U_22 :visited :brussel_brusselNoord} (:brussel_gareDuNord :brussel_brusselNoord :walk) 900 1 0.99 0.99)} <= {?U_22 a :User}.
+
+{:walk ns1:description ({?U_3 :location :home} true {?U_3 :location :krook. ?U_3 :visited :krook} (:home :krook :walk) 900 1 0.99 0.99)} <= {?U_3 a :User}.
+
+
+{:walk ns1:description ({?U_23 :location :brussel_gareDuNord} true {?U_23 :location :brussel_meiser. ?U_23 :visited :brussel_meiser} (:brussel_gareDuNord :brussel_meiser :walk) 900 1 0.99 0.99)} <= {?U_23 a :User}.
+{:walk ns1:description ({?U_24 :location :brussel_gareDuNord} true {?U_24 :location :brussel_brusselCentraal. ?U_24 :visited :brussel_brusselCentraal} (:brussel_gareDuNord :brussel_brusselCentraal :walk) 900 1 0.99 0.99)} <= {?U_24 a :User}.
+{:walk ns1:description ({?U_25 :location :brussel_gareDuNord} true {?U_25 :location :brussel_centraalstation. ?U_25 :visited :brussel_centraalstation} (:brussel_gareDuNord :brussel_centraalstation :walk) 900 1 0.99 0.99)} <= {?U_25 a :User}.
+{:walk ns1:description ({?U_26 :location :brussel_gareDuNord} true {?U_26 :location :brussel_max-plasky. ?U_26 :visited :brussel_max-plasky} (:brussel_gareDuNord :brussel_max-plasky :walk) 900 1 0.99 0.99)} <= {?U_26 a :User}.
+{:walk ns1:description ({?U_27 :location :brussel_meiser} true {?U_27 :location :vrt. ?U_27 :visited :vrt} (:brussel_meiser :vrt :walk) 900 1 0.99 0.99)} <= {?U_27 a :User}.
+{:walk ns1:description ({?U_28 :location :brussel_meiser} true {?U_28 :location :brussel_brusselNoord. ?U_28 :visited :brussel_brusselNoord} (:brussel_meiser :brussel_brusselNoord :walk) 900 1 0.99 0.99)} <= {?U_28 a :User}.
+{:walk ns1:description ({?U_29 :location :brussel_meiser} true {?U_29 :location :brussel_gareDuNord. ?U_29 :visited :brussel_gareDuNord} (:brussel_meiser :brussel_gareDuNord :walk) 900 1 0.99 0.99)} <= {?U_29 a :User}.
+{:walk ns1:description ({?U_30 :location :brussel_meiser} true {?U_30 :location :brussel_brusselCentraal. ?U_30 :visited :brussel_brusselCentraal} (:brussel_meiser :brussel_brusselCentraal :walk) 900 1 0.99 0.99)} <= {?U_30 a :User}.
+{:walk ns1:description ({?U_31 :location :brussel_meiser} true {?U_31 :location :brussel_centraalstation. ?U_31 :visited :brussel_centraalstation} (:brussel_meiser :brussel_centraalstation :walk) 900 1 0.99 0.99)} <= {?U_31 a :User}.
+{:walk ns1:description ({?U_32 :location :brussel_meiser} true {?U_32 :location :brussel_max-plasky. ?U_32 :visited :brussel_max-plasky} (:brussel_meiser :brussel_max-plasky :walk) 900 1 0.99 0.99)} <= {?U_32 a :User}.
+{:walk ns1:description ({?U_33 :location :gent_korenmarkt} true {?U_33 :location :krook. ?U_33 :visited :krook} (:gent_korenmarkt :krook :walk) 900 1 0.99 0.99)} <= {?U_33 a :User}.
+{:walk ns1:description ({?U_34 :location :gent_korenmarkt} true {?U_34 :location :home. ?U_34 :visited :home} (:gent_korenmarkt :home :walk) 900 1 0.99 0.99)} <= {?U_34 a :User}.
+{:walk ns1:description ({?U_35 :location :gent_korenmarkt} true {?U_35 :location :gent_sintpieters. ?U_35 :visited :gent_sintpieters} (:gent_korenmarkt :gent_sintpieters :walk) 900 1 0.99 0.99)} <= {?U_35 a :User}.
+{:walk ns1:description ({?U_36 :location :brussel_brusselCentraal} true {?U_36 :location :vrt. ?U_36 :visited :vrt} (:brussel_brusselCentraal :vrt :walk) 900 1 0.99 0.99)} <= {?U_36 a :User}.
+{:walk ns1:description ({?U_37 :location :brussel_brusselCentraal} true {?U_37 :location :brussel_brusselNoord. ?U_37 :visited :brussel_brusselNoord} (:brussel_brusselCentraal :brussel_brusselNoord :walk) 900 1 0.99 0.99)} <= {?U_37 a :User}.
+{:walk ns1:description ({?U_38 :location :brussel_brusselCentraal} true {?U_38 :location :brussel_gareDuNord. ?U_38 :visited :brussel_gareDuNord} (:brussel_brusselCentraal :brussel_gareDuNord :walk) 900 1 0.99 0.99)} <= {?U_38 a :User}.
+{:walk ns1:description ({?U_39 :location :brussel_brusselCentraal} true {?U_39 :location :brussel_meiser. ?U_39 :visited :brussel_meiser} (:brussel_brusselCentraal :brussel_meiser :walk) 900 1 0.99 0.99)} <= {?U_39 a :User}.
+{:walk ns1:description ({?U_40 :location :brussel_brusselCentraal} true {?U_40 :location :brussel_centraalstation. ?U_40 :visited :brussel_centraalstation} (:brussel_brusselCentraal :brussel_centraalstation :walk) 900 1 0.99 0.99)} <= {?U_40 a :User}.
+{:walk ns1:description ({?U_41 :location :brussel_brusselCentraal} true {?U_41 :location :brussel_max-plasky. ?U_41 :visited :brussel_max-plasky} (:brussel_brusselCentraal :brussel_max-plasky :walk) 900 1 0.99 0.99)} <= {?U_41 a :User}.
+{:walk ns1:description ({?U_42 :location :brussel_centraalstation} true {?U_42 :location :vrt. ?U_42 :visited :vrt} (:brussel_centraalstation :vrt :walk) 900 1 0.99 0.99)} <= {?U_42 a :User}.
+{:walk ns1:description ({?U_43 :location :brussel_centraalstation} true {?U_43 :location :brussel_brusselNoord. ?U_43 :visited :brussel_brusselNoord} (:brussel_centraalstation :brussel_brusselNoord :walk) 900 1 0.99 0.99)} <= {?U_43 a :User}.
+{:walk ns1:description ({?U_44 :location :brussel_centraalstation} true {?U_44 :location :brussel_gareDuNord. ?U_44 :visited :brussel_gareDuNord} (:brussel_centraalstation :brussel_gareDuNord :walk) 900 1 0.99 0.99)} <= {?U_44 a :User}.
+{:walk ns1:description ({?U_45 :location :brussel_centraalstation} true {?U_45 :location :brussel_meiser. ?U_45 :visited :brussel_meiser} (:brussel_centraalstation :brussel_meiser :walk) 900 1 0.99 0.99)} <= {?U_45 a :User}.
+{:walk ns1:description ({?U_46 :location :brussel_centraalstation} true {?U_46 :location :brussel_brusselCentraal. ?U_46 :visited :brussel_brusselCentraal} (:brussel_centraalstation :brussel_brusselCentraal :walk) 900 1 0.99 0.99)} <= {?U_46 a :User}.
+
+
+
+
+
+{:bike ns1:description ({?U_56 :location :krook. ?U_57 :bikelocation :krook} true {?U_56 :location :gent_sintpieters. ?U_57 :bikelocation :gent_sintpieters. ?U_56 :visited :gent_sintpieters} (:krook :gent_sintpieters :bike) 900 1 0.99 0.99)} <= {?U_56 a :User. ?U_57 a :Bike. ?U_56 :owns ?U_57}.
+
+{:walk ns1:description ({?U_47 :location :brussel_centraalstation} true {?U_47 :location :brussel_max-plasky. ?U_47 :visited :brussel_max-plasky} (:brussel_centraalstation :brussel_max-plasky :walk) 900 1 0.99 0.99)} <= {?U_47 a :User}.
+{:walk ns1:description ({?U_48 :location :brussel_max-plasky} true {?U_48 :location :vrt. ?U_48 :visited :vrt} (:brussel_max-plasky :vrt :walk) 900 1 0.99 0.99)} <= {?U_48 a :User}.
+{:walk ns1:description ({?U_49 :location :brussel_max-plasky} true {?U_49 :location :brussel_brusselNoord. ?U_49 :visited :brussel_brusselNoord} (:brussel_max-plasky :brussel_brusselNoord :walk) 900 1 0.99 0.99)} <= {?U_49 a :User}.
+{:walk ns1:description ({?U_50 :location :brussel_max-plasky} true {?U_50 :location :brussel_gareDuNord. ?U_50 :visited :brussel_gareDuNord} (:brussel_max-plasky :brussel_gareDuNord :walk) 900 1 0.99 0.99)} <= {?U_50 a :User}.
+{:walk ns1:description ({?U_51 :location :brussel_max-plasky} true {?U_51 :location :brussel_meiser. ?U_51 :visited :brussel_meiser} (:brussel_max-plasky :brussel_meiser :walk) 900 1 0.99 0.99)} <= {?U_51 a :User}.
+{:walk ns1:description ({?U_52 :location :brussel_max-plasky} true {?U_52 :location :brussel_brusselCentraal. ?U_52 :visited :brussel_brusselCentraal} (:brussel_max-plasky :brussel_brusselCentraal :walk) 900 1 0.99 0.99)} <= {?U_52 a :User}.
+{:walk ns1:description ({?U_53 :location :brussel_max-plasky} true {?U_53 :location :brussel_centraalstation. ?U_53 :visited :brussel_centraalstation} (:brussel_max-plasky :brussel_centraalstation :walk) 900 1 0.99 0.99)} <= {?U_53 a :User}.
+{:bike ns1:description ({?U_54 :location :krook. ?U_55 :bikelocation :krook} true {?U_54 :location :home. ?U_55 :bikelocation :home. ?U_54 :visited :home} (:krook :home :bike) 900 1 0.99 0.99)} <= {?U_54 a :User. ?U_55 a :Bike. ?U_54 :owns ?U_55}.
+{:bike ns1:description ({?U_56 :location :krook. ?U_57 :bikelocation :krook} true {?U_56 :location :gent_sintpieters. ?U_57 :bikelocation :gent_sintpieters. ?U_56 :visited :gent_sintpieters} (:krook :gent_sintpieters :bike) 900 1 0.99 0.99)} <= {?U_56 a :User. ?U_57 a :Bike. ?U_56 :owns ?U_57}.
+
+
+{:train_with_bike ns1:description ({?U_185 :location :gent_sintpieters. ?U_186 :bikelocation :gent_sintpieters} true {?U_185 :location :brussel_brusselNoord. ?U_186 :bikelocation :brussel_brusselNoord. ?U_185 :visited :brussel_brusselNoord} (:gent_sintpieters :brussel_brusselNoord :train_with_bike) 1200 1 0.99 0.99)} <= {?U_185 a :User. ?U_186 a :Bike. ?U_185 :owns ?U_186}.
+
+{:bike ns1:description ({?U_84 :location :brussel_brusselNoord. ?U_85 :bikelocation :brussel_brusselNoord} true {?U_84 :location :vrt. ?U_85 :bikelocation :vrt. ?U_84 :visited :vrt} (:brussel_brusselNoord :vrt :bike) 900 1 0.99 0.99)} <= {?U_84 a :User. ?U_85 a :Bike. ?U_84 :owns ?U_85}.
+
+{:bike ns1:description ({?U_66 :location :vrt. ?U_67 :bikelocation :vrt} true {?U_66 :location :brussel_brusselNoord. ?U_67 :bikelocation :brussel_brusselNoord. ?U_66 :visited :brussel_brusselNoord} (:vrt :brussel_brusselNoord :bike) 900 1 0.99 0.99)} <= {?U_66 a :User. ?U_67 a :Bike. ?U_66 :owns ?U_67}.

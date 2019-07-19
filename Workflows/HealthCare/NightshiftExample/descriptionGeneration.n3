@@ -1,0 +1,51 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+
+#walking actions
+{
+?x a :Location.
+?y a :Location.
+(?x ?y) :distance ?d.
+(?d 0.7) math:product ?p.
+}
+=>
+{
+  {:walk gps:description (
+                          {
+                          ?user :location ?x.
+                          #?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+                          #?atime :time true.
+                          ?user :visited ?y.
+                          }
+                          #action name
+                          (?x ?y :walk)
+                          #Duration
+                          ?p
+                          #cost
+                          ?d
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+?user a :Nurse.      
+  }
+}.
+
+
+
+

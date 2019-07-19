@@ -1,0 +1,230 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix qudt:   <http://qudt.org/schema/qudt/> .
+@prefix unit:   <http://qudt.org/vocab/unit/> .
+@prefix opp:    <https://w3id.org/openplannerteam/profile#> .
+#I would have expected to find the ontology under this url.
+
+# About
+
+<https://w3id.org/openplannerteam/profile>
+        a                 foaf:Document ;
+        foaf:primaryTopic opp: .
+
+opp:    a                              owl:Ontology ;
+        dct:description                """This ontology describes the OpenPlanner profile data model.
+                                          It currently supports: 
+                                            i) setting a default maximum speed,
+                                            ii) whether or not to use public transportation, 
+                                            iii) describing which roads are accessible,
+                                            iv) describing which nodes are obstacles,
+                                            v) describing which roads are oneway streets,
+                                            vi) describing which roads should be given priority, and
+                                            vii) describing the maximum speed for a road."""@en ;
+        cc:license                     <https://creativecommons.org/licenses/by/4.0/> ;
+        rdfs:label                     "OpenPlanner Profile Vocabulary"@en ;
+        vann:preferredNamespacePrefix  "opp" ;
+        vann:preferredNamespaceUri     "https://w3id.org/openplannerteam/profile#" ;
+        dct:creator                    <https://biblio.ugent.be/person/802002413821> ;
+        dct:creator                    <https://pietercolpaert.be/#me> ;
+        dct:issued                     "2019-06-14"^^xsd:date ;
+        dct:modified                   "2019-06-18"^^xsd:date .
+
+<https://biblio.ugent.be/person/802002413821> 
+        a                 foaf:Person ;
+        foaf:name         "Harm Delva" ;
+        foaf:mbox         "harm.delva@ugent.be" .
+
+
+# Element Classes
+
+opp:Profile  
+        a                     rdfs:Class , owl:Class ;
+        rdfs:label            "Profile"@en ;
+        rdfs:comment          """Combines sets of rules and some default values.""" ;
+        owl:disjointWith      opp:Condition , opp:Rule;
+        rdfs:isDefinedBy      opp: .
+
+opp:Rule  
+        a                     rdfs:Class , owl:Class ;
+        rdfs:label            "Rule"@en ;
+        rdfs:comment          """The core element of a profile, it defines a condition that must be met to make a conclusion.
+                                 The condition may be empty, which means that the rule always applies.""" ;
+        owl:disjointWith      opp:Condition , opp:Profile ;
+        rdfs:isDefinedBy      opp: .
+
+opp:Condition  
+        a                     rdfs:Class , owl:Class ;
+        rdfs:label            "Condition"@en ;
+        rdfs:comment          "Defines a condition that must be must for a rule to apply." ;
+        owl:disjointWith      opp:Rule , opp:Profile ;
+        rdfs:isDefinedBy      opp: .
+
+# Object Properties
+
+opp:match
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:minCardinality    0;
+#why do you add this min cardinality. This does not add any information.
+        rdfs:comment          "Describes a condition to match."@en ;
+        rdfs:label            "match"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule ;
+        rdfs:range            opp:Condition .
+
+opp:hasPredicate
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:minCardinality    0;
+        rdfs:comment          "Match things with this specific predicate (key)."@en ;
+        rdfs:label            "hasPredicate"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Condition .
+
+opp:hasObject
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:minCardinality    0;
+        rdfs:comment          "Match things with this specific object (value)."@en ;
+        rdfs:label            "hasObject"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Condition .
+
+opp:fromProperty
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:cardinality       1;
+        rdfs:comment          "Copy the value that corresponds with this key."@en ;
+        rdfs:label            "fromProperty"@en ;
+        rdfs:isDefinedBy      opp: .
+
+opp:hasAccessRules
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:maxCardinality    1;
+        rdfs:comment          "An ordered list of rules that determines whether or not a way is accessible. Only the first rule that matches will be used."@en ;
+        rdfs:label            "hasAccessRules"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Profile ;
+        rdfs:range            opp:Rule .
+
+opp:hasOnewayRules
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:maxCardinality    1;
+        rdfs:comment          "An ordered list of rules that determines whether or not something is a oneway street. Only the first rule that matches will be used."@en ;
+#how can it be a list if the object is a rule?
+        rdfs:label            "hasOnewayRules"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Profile ;
+        rdfs:range            opp:Rule .
+
+opp:hasSpeedRules
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:maxCardinality    1;
+        rdfs:comment          "An ordered list of rules that determines the maximum speed on a street. Only the first rule that matches will be used."@en ;
+        rdfs:label            "hasSpeedRules"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Profile ;
+        rdfs:range            opp:Rule .
+
+opp:hasPriorityRules
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:maxCardinality    1;
+        rdfs:comment          "An ordered list of rules that determines an additional multiplier that will be used to demote/promote certain roads. Only the first rule that matches will be used."@en ;
+        rdfs:label            "hasPriorityRules"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Profile ;
+        rdfs:range            opp:Rule .
+
+opp:hasObstacleRules
+        a                     owl:ObjectProperty , rdf:Property ;
+        owl:maxCardinality    1;
+        rdfs:comment          "An ordered list of rules that determines whether or not a node can be traversed. Only the first rule that matches will be used."@en ;
+        rdfs:label            "hasObstacleRules"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Profile ;
+        rdfs:range            opp:Rule .
+
+# Data properties
+
+opp:concludes
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment          "Describes a conclusion that can be made after matching a rule."@en ;
+        rdfs:label            "conclude"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule .
+#this is a very weird property! Are you sure that the other properties are subproperties of that?
+
+opp:hasMaxSpeed
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:subPropertyOf    opp:concludes ;
+        rdfs:comment          "The maximum legal or physical speed, in km/h."@en ;
+        rdfs:label            "hasMaxSpeed"@en ;
+        rdfs:isDefinedBy      opp: ;
+        qudt:hasUnit          unit:KM-PER-HR ;
+        rdfs:domain           F;
+        rdfs:range            xsd:double .
+
+opp:usePublicTransport
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:comment          "Should public transportation be used."@en ;
+        rdfs:label            "usePublicTransport"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Profile ;
+        rdfs:range            xsd:boolean .
+
+opp:hasAccess
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:subPropertyOf    opp:concludes ;
+        rdfs:comment          "Is a street accessible?"@en ;
+        rdfs:label            "hasAccess"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule ;
+        rdfs:range            xsd:boolean .
+
+opp:isOneway
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:subPropertyOf    opp:concludes ;
+        rdfs:comment          "Is it a oneway street?"@en ;
+        rdfs:label            "isOneway"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule ;
+        rdfs:range            xsd:boolean .
+
+opp:isReversed
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:subPropertyOf    opp:concludes ;
+        rdfs:comment          "If it is a oneway street, should the direction of the nodes be reversed?"@en ;
+        rdfs:label            "isReversed"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule ;
+        rdfs:range            xsd:boolean .
+
+opp:hasSpeed
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:subPropertyOf    opp:concludes ;
+        rdfs:label            "hasSpeed"@en ;
+        rdfs:comment          "The default speed on a road, in km/h."@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule ;
+        rdfs:range            xsd:double .
+
+opp:hasPriority
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:subPropertyOf    opp:concludes ;
+        rdfs:label            "hasPriority"@en ;
+        rdfs:comment          "A multiplier that is used to promote/demote roads. A value larger than 1 will promote a road."@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule ;
+        rdfs:range            xsd:double .
+
+opp:isObstacle
+        a                     owl:DatatypeProperty , rdf:Property ;
+        rdfs:subPropertyOf    opp:concludes ;
+        rdfs:label            "isObstacle"@en ;
+        rdfs:comment          "Is a node an obstacle?"@en ;
+        rdfs:isDefinedBy      opp: ;
+        rdfs:domain           opp:Rule ;
+rdfs:range xsd:boolean .

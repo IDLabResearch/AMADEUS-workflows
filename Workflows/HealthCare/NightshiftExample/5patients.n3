@@ -1,0 +1,89 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+
+
+#We have 10 Patients
+
+#:bob a :Patient;
+#     :hasRoom :room1;
+#     :state :awake.
+
+#:rudy a :Patient;
+#     :hasRoom :room2;
+#     :state :awake.
+
+#:karl a :Patient;
+#     :hasRoom :room3;
+#     :state :awake.
+
+#:maria a :Patient;
+#     :hasRoom :room4;
+#     :state :awake.
+
+#:ann a :Patient;
+#     :hasRoom :room5;
+#     :state :awake.
+
+:erika a :Patient;
+     :hasRoom :room6;
+     :state :awake.
+
+:peter a :Patient;
+     :hasRoom :room7;
+     :state :awake.
+
+:ron a :Patient;
+     :hasRoom :room8;
+     :state :awake.
+
+:ruth a :Patient;
+     :hasRoom :room9;
+     :state :awake.
+
+:eva a :Patient;
+     :hasRoom :room10;
+     :state :awake.
+
+
+#distances between rooms and nurse office:
+:room6 a :Room, :Location.
+:room7 a :Room, :Location.
+:room8 a :Room, :Location.
+:room9 a :Room, :Location.
+:room10 a :Room, :Location.
+
+:office a  :Location.
+
+(:room6 :room7) :distance 1.
+(:room6 :room8) :distance 2.
+(:room6 :room9) :distance 3.
+(:room6 :room10) :distance 2.
+(:room6 :office) :distance 1.
+
+(:room7 :room8) :distance 1.
+(:room7 :room9) :distance 2.
+(:room7 :room10) :distance 2.
+(:room7 :office) :distance 1.
+
+
+(:room8 :room9) :distance 1.
+(:room8 :room10) :distance 2.
+(:room8 :office) :distance 1.
+
+
+(:room9 :room10) :distance 1.
+(:room9 :office) :distance 1.
+
+(:room10 :office) :distance 1.
+
+
+
+{(?a ?b) :distance ?x}=>{(?b ?a) :distance ?x}.
+
+
+:sarah a :Nurse.
+:sarah :location :office.

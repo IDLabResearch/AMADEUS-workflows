@@ -1,0 +1,18 @@
+
+PREFIX : <http://www.example.org#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+
+
+
+
+#going to brussel noord
+{
+    ?SCOPE gps:findpath ({					?user a :User. 
+?user :location :brussel_brusselNoord. 
+} ?PATH ?DURATION ?COST ?BELIEF ?COMFORT (10800.0 6.0 0.2 0.4 20 )).
+} => {
+    ?SUBJECT gps:path (?PATH ?DURATION ?COST ?BELIEF ?COMFORT).
+}.
+

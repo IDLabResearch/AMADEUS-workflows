@@ -1,0 +1,35 @@
+#Processed by EYE v19.0604.1527 josd
+#eye context.n3 descriptions.n3 gps-plugin.n3 --query gps-query.n3 --nope
+
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX ns1: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+
+_:sk_0 ns1:path ((<http://irail.be/connections/8892007/20190618/IC2813> <http://irail.be/connections/8814001/20190618/S23663> <http://irail.be/connections/8813037/20190618/S23663> <http://irail.be/connections/8813003/20190618/IC413> <http://irail.be/connections/8813045/20190618/IC413>) 2220.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_1 ns1:path ((<http://irail.be/connections/8892007/20190618/IC2813> <http://irail.be/connections/8814001/20190618/S23663> <http://irail.be/connections/8813037/20190618/S23663> <http://irail.be/connections/8813003/20190618/S23663> <http://irail.be/connections/8813045/20190618/S23663>) 2220.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_2 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC3314> <http://irail.be/connections/8813037/20190618/IC3314> <http://irail.be/connections/8813003/20190618/IC3314> <http://irail.be/connections/8813045/20190618/IC3314>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_3 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC3314> <http://irail.be/connections/8813037/20190618/IC3314> <http://irail.be/connections/8813003/20190618/IC3314> <http://irail.be/connections/8813045/20190618/IC413>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_4 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC3314> <http://irail.be/connections/8813037/20190618/IC3314> <http://irail.be/connections/8813003/20190618/IC3314> <http://irail.be/connections/8813045/20190618/S23663>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_5 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC3314> <http://irail.be/connections/8813037/20190618/IC3314> <http://irail.be/connections/8813003/20190618/IC413> <http://irail.be/connections/8813045/20190618/IC413>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_6 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC3314> <http://irail.be/connections/8813037/20190618/IC3314> <http://irail.be/connections/8813003/20190618/S23663> <http://irail.be/connections/8813045/20190618/S23663>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_7 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC3314> <http://irail.be/connections/8813037/20190618/IC413> <http://irail.be/connections/8813003/20190618/IC413> <http://irail.be/connections/8813045/20190618/IC413>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_8 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC3314> <http://irail.be/connections/8813037/20190618/S23663> <http://irail.be/connections/8813003/20190618/S23663> <http://irail.be/connections/8813045/20190618/S23663>) 2220.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_9 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC413> <http://irail.be/connections/8813037/20190618/IC413> <http://irail.be/connections/8813003/20190618/IC413> <http://irail.be/connections/8813045/20190618/IC413>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_10 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC413> <http://irail.be/connections/8813037/20190618/IC413> <http://irail.be/connections/8813003/20190618/IC413> <http://irail.be/connections/8813045/20190618/S23663>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_11 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC413> <http://irail.be/connections/8813037/20190618/IC413> <http://irail.be/connections/8813003/20190618/S23663> <http://irail.be/connections/8813045/20190618/S23663>) 2280.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_12 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC413> <http://irail.be/connections/8813037/20190618/S23663> <http://irail.be/connections/8813003/20190618/IC413> <http://irail.be/connections/8813045/20190618/IC413>) 2220.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_13 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/IC413> <http://irail.be/connections/8813037/20190618/S23663> <http://irail.be/connections/8813003/20190618/S23663> <http://irail.be/connections/8813045/20190618/S23663>) 2220.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_14 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/S23663> <http://irail.be/connections/8813037/20190618/S23663> <http://irail.be/connections/8813003/20190618/IC413> <http://irail.be/connections/8813045/20190618/IC413>) 2220.0 5.0 0.9509900498999999 0.9509900498999999).
+_:sk_15 ns1:path ((<http://irail.be/connections/8892007/20190618/IC413> <http://irail.be/connections/8814001/20190618/S23663> <http://irail.be/connections/8813037/20190618/S23663> <http://irail.be/connections/8813003/20190618/S23663> <http://irail.be/connections/8813045/20190618/S23663>) 2220.0 5.0 0.9509900498999999 0.9509900498999999).
+
+#2019-06-18T11:58:00.787Z in=3274 out=16 ent=16 step=16 brake=2 inf=72985636 sec=17.785 inf/sec=4103775
+#ENDS
+
