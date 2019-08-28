@@ -1,0 +1,23 @@
+#Processed by EYE v19.0817.2233 josd
+#eye patientData/Rosa.n3 treatmentPlan/gps-desc.n3 treatmentPlan/gps-knowledge.n3 ../../Plugin/gps-plugin.n3 --query treatmentPlan/gps-query.n3 --nope
+
+PREFIX sct: <http://snomed.info/id/>
+PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+
+data:patient_1 gps:path ((action:Neoadjuvant_chemoradiotherapy action:surgery_colon_cancer) 4752000.0 35097.0 0.81 0.25 (0.020000000000000004 0.9199999999999999 0.6935 0.06)).
+data:patient_1 gps:path ((action:surgery_colon_cancer) 432000.0 20950.0 0.9 0.5 (0.04000000000000001 0.84 0.95 0.2)).
+
+#2019-08-28T16:36:17.358Z in=38 out=2 ent=2 step=2 brake=2 inf=170835 sec=0.079 inf/sec=2162468
+#ENDS
+

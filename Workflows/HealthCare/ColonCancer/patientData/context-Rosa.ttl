@@ -1,0 +1,171 @@
+@prefix : <http://occs.intec.ugent.be/ontology/entity#> .
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+@prefix DUL: <http://IBCNServices.github.io/Accio-Ontology/ontologies/DUL.owl#> .
+@prefix SAREFiot: <http://IBCNServices.github.io/Accio-Ontology/SAREFiot.owl#> .
+@prefix SSNiot: <http://IBCNServices.github.io/Accio-Ontology/SSNiot.owl#> .
+@prefix General: <http://IBCNServices.github.io/Accio-Ontology/General.owl#> .
+@prefix SAREFiot: <http://IBCNServices.github.io/Accio-Ontology/SAREFiot.owl#> .
+@prefix ContextAccio: <http://IBCNServices.github.io/Accio-Ontology/ContextAccio.owl#> .
+@prefix Localization: <http://IBCNServices.github.io/Accio-Ontology/Localization.owl#> .
+@prefix RoleCompetenceAccio: <http://IBCNServices.github.io/Accio-Ontology/RoleCompetenceAccio.owl#> .
+@prefix CareRoomMonitoring: <http://IBCNServices.github.io/Accio-Ontology/CareRoomMonitoring.owl#> .
+
+# Rosa's service flat
+# -> consists of 1 living room & 1 bath room (with a door between them)
+#    (for simplicity, living room contains bed & kitchen)
+# -> consists of 1 door to exit the house
+
+:ServiceFlat_5A rdf:type Localization:Home .
+:ServiceFlat_5A Localization:containsRoom :5A_LivingRoom , :5A_BathRoom , :5A_Hall .
+:5A_LivingRoom rdf:type Localization:LivingRoom .
+:5A_BathRoom rdf:type Localization:BathRoom .
+:5A_Hall rdf:type Localization:Corridor .
+
+:5A_Door rdf:type Localization:Door ;
+         Localization:isPassageOf :5A_Hall , [ rdf:type Localization:OutdoorSpace ] .
+:5A_Door_Hall_to_LivingRoom rdf:type Localization:Door ;
+         Localization:isPassageOf :5A_Hall , :5A_LivingRoom .
+:5A_Door_Hall_to_BathRoom rdf:type Localization:Door ;
+         Localization:isPassageOf :5A_Hall , :5A_BathRoom .
+:5A_Door_LivingRoom_to_BathRoom rdf:type Localization:Door ;
+         Localization:isPassageOf :5A_LivingRoom , :5A_BathRoom .
+
+:5A_TV rdf:type SAREFiot:TV ;
+       DUL:hasLocation :5A_LivingRoom , :ServiceFlat_5A .
+:5A_LivingRoom_RoomLight rdf:type SAREFiot:RoomLight ;
+                         DUL:hasLocation :5A_LivingRoom , :ServiceFlat_5A .
+:5A_BathRoom_RoomLight rdf:type SAREFiot:RoomLight ;
+                       DUL:hasLocation :5A_BathRoom , :ServiceFlat_5A .
+
+
+
+# patient Rosa
+
+:Rosa rdf:type DUL:Person ;
+      DUL:hasRole [ rdf:type RoleCompetenceAccio:PatientRole ] ;
+      CareRoomMonitoring:hasDiagnosis CareRoomMonitoring:Concussion ;
+      CareRoomMonitoring:hasDiagnosis CareRoomMonitoring:Dementia ;
+      CareRoomMonitoring:hasDiagnosis CareRoomMonitoring:ColonCancer ;
+      DUL:hasLocation :ServiceFlat_5A .
+
+
+
+# living room sensor system
+
+:40-a5-ef-05-a4-a6 rdf:type ssn:System ;
+    General:hasId [ General:hasID "40-a5-ef-05-a4-a6"^^xsd:string ] ;
+    DUL:hasLocation :5A_LivingRoom , :ServiceFlat_5A .
+
+:40-a5-ef-05-a4-a6-0a12-0001 rdf:type SSNiot:BLEBeacon ;
+    sosa:observes [ rdf:type SSNiot:BLETag ] ;
+    General:hasId [ General:hasID "40-a5-ef-05-a4-a6-0a12-0001"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :40-a5-ef-05-a4-a6 .
+
+:40-a5-ef-05-a4-a6-S0 rdf:type sosa:Sensor ;
+    sosa:observes [ rdf:type SSNiot:LightIntensity ] ;
+    General:hasId [ General:hasID "40-a5-ef-05-a4-a6-S0"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :40-a5-ef-05-a4-a6 .
+
+:40-a5-ef-05-a4-a6-S1 rdf:type sosa:Sensor ;
+    sosa:observes [ rdf:type SSNiot:Sound ] ;
+    General:hasId [ General:hasID "40-a5-ef-05-a4-a6-S1"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :40-a5-ef-05-a4-a6 .
+
+:40-a5-ef-05-a4-a6-S2 rdf:type sosa:Sensor ;
+    sosa:observes [ rdf:type SSNiot:ExternalTemperature ] ;
+    General:hasId [ General:hasID "40-a5-ef-05-a4-a6-S2"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :40-a5-ef-05-a4-a6 .
+
+:40-a5-ef-05-a4-a6-S3 rdf:type sosa:Sensor ;
+    sosa:observes [ rdf:type SSNiot:Humidity ] ;
+    General:hasId [ General:hasID "40-a5-ef-05-a4-a6-S3"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :40-a5-ef-05-a4-a6 .
+
+
+
+# bathroom sensor system
+
+:e3-28-0f-a5-14-3c rdf:type ssn:System ;
+    General:hasId [ General:hasID "e3-28-0f-a5-14-3c"^^xsd:string ] ;
+    DUL:hasLocation :5A_BathRoom , :ServiceFlat_5A .
+
+:e3-28-0f-a5-14-3c-e58c-0001 rdf:type SSNiot:BLEBeacon ;
+    sosa:observes [ rdf:type SSNiot:BLETag ] ;
+    General:hasId [ General:hasID "e3-28-0f-a5-14-3c-e58c-0001"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :e3-28-0f-a5-14-3c .
+
+
+
+# hallway sensor system
+
+:8c-13-f5-0e-64-b6 rdf:type ssn:System ;
+    General:hasId [ General:hasID "8c-13-f5-0e-64-b6"^^xsd:string ] ;
+    DUL:hasLocation :5A_Hall , :ServiceFlat_5A .
+
+:8c-13-f5-0e-64-b6-49ba-0001 rdf:type SSNiot:BLEBeacon ;
+    sosa:observes [ rdf:type SSNiot:BLETag ] ;
+    General:hasId [ General:hasID "8c-13-f5-0e-64-b6-49ba-0001"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :8c-13-f5-0e-64-b6 .
+
+
+
+# Rosa's wearable
+
+:Rosa SAREFiot:ownsDevice :c1-19-24-70-fb-6d .
+:c1-19-24-70-fb-6d rdf:type SAREFiot:PersonalElectronicDevice , SAREFiot:BLEBracelet , ssn:System ;
+    General:hasId [ General:hasID "c1-19-24-70-fb-6d"^^xsd:string ] ;
+    DUL:hasLocation :ServiceFlat_5A .
+
+:c1-19-24-70-fb-6d-S0 rdf:type sosa:Sensor ;
+    sosa:observes [ rdf:type SSNiot:BodyTemperature ] ;
+    General:hasId [ General:hasID "c1-19-24-70-fb-6d-S0"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :c1-19-24-70-fb-6d .
+
+:c1-19-24-70-fb-6d-S1 rdf:type sosa:Sensor ;
+    sosa:observes [ rdf:type SSNiot:HeartRate ] ;
+    General:hasId [ General:hasID "c1-19-24-70-fb-6d-S1"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :c1-19-24-70-fb-6d .
+
+:c1-19-24-70-fb-6d-S2 rdf:type sosa:Sensor ;
+    sosa:observes [ rdf:type CareRoomMonitoring:PersonStep ] ;
+    General:hasId [ General:hasID "c1-19-24-70-fb-6d-S2"^^xsd:string ] ;
+    SSNiot:isSubsystemOf :c1-19-24-70-fb-6d .
+
+
+
+# door contact sensors
+
+:b4-8c-ff-60-d9-0d rdf:type ssn:System ;
+                   General:hasId [ General:hasID "b4-8c-ff-60-d9-0d"^^xsd:string ] ;
+                   DUL:hasLocation :ServiceFlat_5A .
+
+:b4-8c-ff-60-d9-0d-S0 rdf:type SSNiot:DoorWindowContactSensor ;
+                      sosa:observes [ rdf:type SSNiot:DoorWindowContact ] ;
+                      General:hasId [ General:hasID "b4-8c-ff-60-d9-0d-S0"^^xsd:string ] ;
+                      sosa:isHostedBy :5A_Door ;
+                      SSNiot:isSubsystemOf :b4-8c-ff-60-d9-0d .
+
+:b4-8c-ff-60-d9-0d-S1 rdf:type SSNiot:DoorWindowContactSensor ;
+                      sosa:observes [ rdf:type SSNiot:DoorWindowContact ] ;
+                      General:hasId [ General:hasID "b4-8c-ff-60-d9-0d-S1"^^xsd:string ] ;
+                      sosa:isHostedBy :5A_Door_Hall_to_LivingRoom ;
+                      SSNiot:isSubsystemOf :b4-8c-ff-60-d9-0d .
+
+:b4-8c-ff-60-d9-0d-S2 rdf:type SSNiot:DoorWindowContactSensor ;
+                      sosa:observes [ rdf:type SSNiot:DoorWindowContact ] ;
+                      General:hasId [ General:hasID "b4-8c-ff-60-d9-0d-S1"^^xsd:string ] ;
+                      sosa:isHostedBy :5A_Door_Hall_to_BathRoom ;
+                      SSNiot:isSubsystemOf :b4-8c-ff-60-d9-0d .
+
+:b4-8c-ff-60-d9-0d-S3 rdf:type SSNiot:DoorWindowContactSensor ;
+                      sosa:observes [ rdf:type SSNiot:DoorWindowContact ] ;
+                      General:hasId [ General:hasID "b4-8c-ff-60-d9-0d-S1"^^xsd:string ] ;
+                      sosa:isHostedBy :5A_Door_LivingRoom_to_BathRoom ;
+                      SSNiot:isSubsystemOf :b4-8c-ff-60-d9-0d .
