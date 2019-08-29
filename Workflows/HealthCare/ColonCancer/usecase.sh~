@@ -24,4 +24,7 @@ eye  treatmentPlan/cancerChosenPath.n3 otherData/t0.ttl ../../Plugin/gps-tempora
 eye --nope treatmentPlan/initialPathT1.n3 treatmentPlan/gps-desc.n3 --query treatmentPlan/chemotherapy-goal-creation.n3q > treatmentPlan/goal_neoadjuvant_chemoradiotherapy.n3q
 
 #Generate sub-plans for neoadjuvant-chemoradiotherapy.
-eye --nope treatmentPlan/initialPathT1.n3 treatmentPlan/gps-desc.n3 treatmentPlan/gps-desc-details.n3 Plugin/gps-plugin.n3 --query treatmentPlan/goal_neoadjuvant_chemoradiotherapy.n3q >treatmentPlan/path_neoadjuvant_chemoradiotherapy.n3
+eye --nope treatmentPlan/contraindications.n3 treatmentPlan/initialPathT1.n3 treatmentPlan/gps-desc.n3 treatmentPlan/gps-desc-details.n3 ../../Plugin/gps-plugin.n3 --query treatmentPlan/goal_neoadjuvant_chemoradiotherapy.n3q >treatmentPlan/path_neoadjuvant_chemoradiotherapy.n3
+
+#generate plan for influenza
+eye --nope patientData/Rosa_T2.n3 treatmentPlan/gps-desc_influenza.n3 ../../Plugin/gps-plugin.n3 --query treatmentPlan/gps-query-influenza.n3 > treatmentPlan/plan-T2.n3

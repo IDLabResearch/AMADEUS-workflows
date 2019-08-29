@@ -1,16 +1,15 @@
 PREFIX math: <http://www.w3.org/2000/10/swap/math#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
-PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
-PREFIX action: <http://josd.github.io/fluid/gps/action#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
 PREFIX log: <http://www.w3.org/2000/10/swap/log#>
 PREFIX string: <http://www.w3.org/2000/10/swap/string#>
-PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 PREFIX sct: <http://snomed.info/id/>
-PREFIX therapy: <http://josd.github.io/fluid/gps/therapy#>
-PREFIX surgery: <http://josd.github.io/fluid/gps/surgery#>
-PREFIX care: <http://josd.github.io/fluid/gps/care#>
-
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 
 ##Neoadjuvant_chemoradiotherapy_episode_1
 {
@@ -18,7 +17,7 @@ PREFIX care: <http://josd.github.io/fluid/gps/care#>
 		{}
 		{}
 		{
-			action:Neodjuvant_chemoradiotherapy_episode1 gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:planned.
 		}
 		action:Neodjuvant_chemoradiotherapy_episode1
 		"P20D"^^xsd:dayTimeDuration
@@ -34,7 +33,7 @@ PREFIX care: <http://josd.github.io/fluid/gps/care#>
 	?selectedTemporalPath list:member ((action:Neoadjuvant_chemoradiotherapy ?start ?end) ?state ?time ?graph).
 	
 	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:planned.}.
-	
+	?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
 
@@ -44,7 +43,7 @@ PREFIX care: <http://josd.github.io/fluid/gps/care#>
 		{}
 		{}
 		{
-			action:Neodjuvant_chemoradiotherapy_episode2 gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:planned.
 		}
 		action:Neoadjuvant_chemoradiotherapy_episode2
 		"P20D"^^xsd:dayTimeDuration
@@ -56,6 +55,7 @@ PREFIX care: <http://josd.github.io/fluid/gps/care#>
 	action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:planned.
 	
 	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:planned.}.
+  ?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
 
@@ -77,6 +77,7 @@ PREFIX care: <http://josd.github.io/fluid/gps/care#>
 	action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:planned.
 	
 	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:planned.}.
+  ?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
 
@@ -98,6 +99,7 @@ PREFIX care: <http://josd.github.io/fluid/gps/care#>
 	action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:planned.
 	
 	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode4 gps:status gps:planned.}.
+  ?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
 

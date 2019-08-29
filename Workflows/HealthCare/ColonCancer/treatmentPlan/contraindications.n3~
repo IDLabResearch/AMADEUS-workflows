@@ -1,0 +1,51 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX sct: <http://snomed.info/id/>
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
+
+
+#patient has influenza
+{?patient therapy:hasContraindicationForChemotherapy true }
+<=
+{
+		?patient a  care:Patient. 
+		?patient  care:diagnosis sct:6142004. #influenza
+}.
+
+
+
+#patient takes mediaction which conflicts with some chemo mediactions
+{?patient therapy:hasContraindicationForChemotherapy true }
+<=
+{
+		?patient a  care:Patient. 
+		?patient  therapy:medication ?med.
+    ?med medication:contraindication therapy:chemoradiotherapy. 
+}.
+
+
+
+#drugs with contraindications (only small selection)
+medication:vitamin_e medication:contraindication therapy:chemoradiotherapy.
+medication:levodopa medication:contraindication therapy:chemoradiotherapy. 
+medication:influenza_virus_vaccine_live_trivalent medication:contraindication therapy:chemoradiotherapy. 
+medication:etanercept medication:contraindication therapy:chemoradiotherapy. 
+medication:fingolimod medication:contraindication therapy:chemoradiotherapy. 
+ 
+
+
+#drug Interactions
+
+
+
+
+

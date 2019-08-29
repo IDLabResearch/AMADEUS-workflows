@@ -1,0 +1,67 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX sct: <http://snomed.info/id/>
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+
+#actions
+
+#Oseltamivir 
+{
+	care:Influenza gps:description (
+		{?patient  care:diagnosis sct:6142004.} #patient has influenza.
+		{?patient gps:medication medication:oseltamivir.
+     ?patient  care:diagnosis sct:6142004.
+    }
+		{?patient  care:curedFrom sct:6142004.}
+		action:take_oseltamivir 
+		"P10D"^^xsd:dayTimeDuration
+		14.09 
+		0.8
+		0.8
+	)
+} <= {
+	?patient a care:Patient. 
+}. 
+
+#zanamivir  
+{
+	care:Influenza gps:description (
+		{?patient  care:diagnosis sct:6142004.} #patient has influenza.
+		{
+     ?patient  care:diagnosis sct:6142004.
+     ?patient gps:medication medication:zanamivir.}
+		{?patient  care:curedFrom sct:6142004.}
+		action:take_zanamivir  
+		"P12D"^^xsd:dayTimeDuration
+		99.71  
+		0.8
+		0.9
+	)
+} <= {
+	?patient a care:Patient. 
+}. 
+
+
+#wait  
+{
+	care:Parkinson gps:description (
+		{?patient  care:diagnosis sct:6142004.} #patient has influenza.
+		{?patient  care:diagnosis sct:6142004.}
+		{?patient  care:curedFrom sct:6142004.}
+		action:wait 
+		"P16D"^^xsd:dayTimeDuration
+		0
+		0.7
+		0.7
+	)
+} <= {
+	?patient a care:Patient. 
+}. 
