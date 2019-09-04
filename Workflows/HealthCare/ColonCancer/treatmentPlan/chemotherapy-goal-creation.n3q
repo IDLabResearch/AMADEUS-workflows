@@ -31,12 +31,13 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 		{
 		?SCOPE gps:findpath (
 		{
-			action:Neoadjuvant_chemoradiotherapy gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy gps:status gps:completed.
 		} 
 		?PATH ?DURATION ?COST ?BELIEF ?COMFORT (?DURATION_LIMIT ?COST_LIMIT ?BELIEF_LIMIT ?COMFORT_LIMIT)).
 	
 	} => {
 		?patient gps:path (?PATH ?DURATION ?COST ?BELIEF ?COMFORT).
+
 	}.
 
 }.

@@ -1,0 +1,16 @@
+eye --nope patientData/Rosa.n3 otherData/t0.ttl treatmentPlan/sub_initialPathT1.n3 ../../Plugin/gps-plugin-aggregated-path-processing.n3 --tactic limited-answer 1 --query ../../Plugin/gps-aggregation-query.n3q
+EYE v19.0817.2233 josd
+SWI-Prolog 7.2.3 (amd64): Feb 12 2016, 23:26:21
+starting 52 [msec cputime] 57 [msec walltime]
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/patientData/Rosa.n3 SC=16
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/otherData/t0.ttl SC=1
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/treatmentPlan/sub_initialPathT1.n3 SC=1
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/Plugin/gps-plugin-aggregated-path-processing.n3 SC=12
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/Plugin/gps-aggregation-query.n3q SC=1
+networking 22 [msec cputime] 27 [msec walltime]
+TRACE ("?initialAggregatedPath" (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1573486204.0) gps:start 1571758204 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1573486204.0) gps:end 1573486204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1573486204.0 1575214204.0) gps:start 1573486204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1573486204.0 1575214204.0) gps:end 1575214204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1575214204.0 1576942204.0) gps:start 1575214204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1575214204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1576942204.0 1578670204.0) gps:start 1576942204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1576942204.0 1578670204.0) gps:end 1578670204.0 ())))
+TRACE ("?path_in " (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1573486204.0) gps:start 1571758204 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1573486204.0) gps:end 1573486204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1573486204.0 1575214204.0) gps:start 1573486204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1573486204.0 1575214204.0) gps:end 1575214204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1575214204.0 1576942204.0) gps:start 1575214204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1575214204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1576942204.0 1578670204.0) gps:start 1576942204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1576942204.0 1578670204.0) gps:end 1578670204.0 ())))
+TRACE (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1573486204.0) gps:start 1571758204 ()) "(?Action ?start ?end) gps:start ?dueTime ?graph)")
+reasoning 8 [msec cputime] 17 [msec walltime]
+2019-09-02T15:23:01.361Z in=31 out=0 ent=0 step=0 brake=1 inf=129093 sec=0.082 inf/sec=1574305
+

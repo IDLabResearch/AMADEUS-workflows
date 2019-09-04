@@ -4,11 +4,11 @@
 PREFIX sct: <http://snomed.info/id/>
 PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
 PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
 PREFIX math: <http://www.w3.org/2000/10/swap/math#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
-PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
-PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
 PREFIX log: <http://www.w3.org/2000/10/swap/log#>
 PREFIX string: <http://www.w3.org/2000/10/swap/string#>
 PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
@@ -20,6 +20,6 @@ data:patient_1 gps:path ((action:take_oseltamivir) 864000.0 14.09 0.8 0.8).
 data:patient_1 gps:path ((action:take_zanamivir) 1036800.0 99.71 0.8 0.9).
 data:patient_1 gps:path ((action:wait) 1382400.0 0.0 0.7 0.7).
 
-#2019-08-29T14:50:01.115Z in=28 out=3 ent=3 step=3 brake=2 inf=104678 sec=0.057 inf/sec=1836456
+#2019-09-04T16:18:17.807Z in=28 out=3 ent=3 step=3 brake=2 inf=105585 sec=0.051 inf/sec=2070294
 #ENDS
 

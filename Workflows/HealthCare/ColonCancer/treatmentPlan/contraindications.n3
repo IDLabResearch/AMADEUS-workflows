@@ -44,11 +44,11 @@ medication:fingolimod medication:contraindication therapy:chemoradiotherapy.
 
 
 #drug Interactions
-mediaction:oseltamivir mediaction:containdication     mediaction:entecavir, 
+medication:oseltamivir medication:containdication     medication:entecavir, 
                                                       medication:influenza_virus_vaccine_h1n1_live, 
                                                       medication:influenza_virus_vaccine_live_trivalent,
                                                       medication:methotrexate,
-                                                      mediaction:pemetrexed,
+                                                      medication:pemetrexed,
                                                       medication:probenecid,
                                                       medication:tafamidis,
                                                       medication:warfarin.

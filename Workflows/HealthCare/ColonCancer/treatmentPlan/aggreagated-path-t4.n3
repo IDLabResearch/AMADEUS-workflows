@@ -1,0 +1,27 @@
+#Processed by EYE v19.0817.2233 josd
+#eye --nope patientData/Rosa_T2.n3 otherData/t4.ttl treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3 treatmentPlan/initial-aggreagated-path-t4.n3 ../../Plugin/gps-plugin-aggregated-path-processing.n3 --tactic limited-answer 1 --query ../../Plugin/gps-aggregation-query.n3q
+
+PREFIX sct: <http://snomed.info/id/>
+PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
+PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
+PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ns1: <http://josd.github.io/fluid/gps/action#>
+PREFIX : <http://josd.github.io/fluid#>
+
+
+#2019-09-04T14:55:32.310Z in=59 out=0 ent=0 step=0 brake=2 inf=244812 sec=0.065 inf/sec=3766338
+#ENDS
+

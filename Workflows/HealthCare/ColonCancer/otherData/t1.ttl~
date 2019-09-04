@@ -1,0 +1,11 @@
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+
+
+
+
+
+gps:CurrentTime gps:value 1571758204 .
+#GMT: Tuesday, October 22, 2019 15:30:04 
+
+
+

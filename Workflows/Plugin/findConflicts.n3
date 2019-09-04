@@ -1,0 +1,196 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX action: <http://josd.github.io/fluid/gps/action#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
+PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+
+{?patient gps:checkedPath ?path}
+<=
+{
+?patient gps:initialAggregatedPath ?path.
+?patient gps:check ?path.
+}.
+
+
+{?patient gps:check ()}<={ ("!") e:derive true}.
+
+
+{?patient gps:check ?path }
+<=
+{
+?path rdf:first ?first.
+?first log:equalTo (?list ?startstop ?time ?graph).
+
+
+(?list ?startstop ?time ?graph) gps:evaluate true.
+
+?path rdf:rest ?rest.
+
+?patient gps:check ?rest.
+}.
+
+
+#did the action stop in the past? then we can ignore it
+{(?list gps:end ?time ?graph) gps:evaluate true.}
+<=
+{
+gps:CurrentTime gps:value ?now.
+?time math:lessThan ?now.
+("!") e:derive true
+}.
+
+#did the action start and also stop in the past? then we can also ignore it
+{(?list gps:start ?time ?graph) gps:evaluate true.}
+<=
+{
+gps:CurrentTime gps:value ?now.
+?time math:lessThan ?now.
+?list log:equalTo (?action ?start ?stop).
+?stop math:lessThan ?now.
+("!") e:derive true
+}.
+
+#is the action ongoing? then we need to remember the to-state (can be a problem)
+{(?list gps:start ?time ?graph) gps:evaluate true.}
+<=
+{
+gps:CurrentTime gps:value ?now.
+?time math:lessThan ?now.
+?list log:equalTo (?action ?start ?stop).
+?stop math:notLessThan ?now.
+("!") e:derive true.
+
+{
+	?map gps:description (
+		?from
+		?between
+    ?to
+		?action
+		?a
+		?b
+		?c
+		?d
+	)
+} <= ?where.
+("!") e:derive true. 
+{} e:becomes {(?action ?start ?stop ) gps:to ?to.}.
+}.
+
+#future stop
+{(?list gps:end ?time ?graph) gps:evaluate true.}
+<=
+{
+gps:CurrentTime gps:value ?now.
+?time math:notLessThan ?now.
+("!") e:derive true.
+
+?list log:equalTo (?action ?start ?stop).
+
+("!") e:derive true.
+{
+	?map gps:description (
+		?from
+		?between
+    ?to
+		?action
+		?a
+		?b
+		?c
+		?d
+	)
+} <= ?where.
+
+("!") e:derive true. 
+
+(?action ?start ?stop ) gps:to ?iniTo.
+("!") e:derive true.
+
+
+?sc e:optional {?jj e:call ?between.}.
+(?action gps:end ?time) gps:callOrError ?between.
+#?scope e:call ?between.
+
+("!") e:derive true.
+
+?between e:becomes ?iniTo.
+
+}.
+
+
+#future start
+{(?list gps:start ?time ?graph) gps:evaluate true.}
+<=
+{
+gps:CurrentTime gps:value ?now.
+?time math:notLessThan ?now.
+("!") e:derive true.
+
+
+?list log:equalTo (?action ?start ?stop).
+
+("!") e:derive true.
+{
+	?map gps:description (
+		?from
+		?between
+    ?to
+		?action
+		?a
+		?b
+		?c
+		?d
+	)
+} <= ?where.
+
+("!") e:derive true.
+?sc e:optional {?jj e:call ?from.}.
+(?action gps:start ?time) gps:callOrError ?from.
+
+("!") e:derive true.
+?sc e:optional {?jj e:call ?where.}.
+(?action gps:start ?time) gps:callOrError ?where.
+
+{} e:becomes {(?action ?start ?stop ) gps:to ?to. true}.
+("!") e:derive true.
+?from e:becomes ?between.
+("!") e:derive true.
+}.
+
+{?x gps:callOrError {}}<={
+("!") e:derive true.
+}.
+
+
+
+{?x gps:callOrError ?y}
+<=
+{
+_:x e:call ?y.
+("!") e:derive true.
+}.
+
+{?x gps:callOrError ?y}
+<=
+{
+("!") e:derive true.
+
+{} e:becomes {?x gps:failedCall ?y. true}.
+("!") e:derive true.
+("fail") e:derive true.
+("!") e:derive true.
+}.
+
+
+
+
+
+
+

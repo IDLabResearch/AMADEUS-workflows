@@ -17,7 +17,7 @@ PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
 		?patient  care:tumor_size 0 .
 		
 		?patient  care:metastasis_risk ?risk .
-		?risk math:lessThan 0.6. #0.1 .
+		#?risk math:lessThan 0.1 .
 		
 		?patient  care:5yr_survival_rate ?rate .
 		#?rate math:greaterThan 0.7 .
@@ -32,4 +32,5 @@ PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
 
 } => {
 	?patient gps:path (?PATH ?DURATION ?COST ?BELIEF ?COMFORT (?risk ?rate ?non_toxicity ?relapse_risk) ).
+?patient 
 }.

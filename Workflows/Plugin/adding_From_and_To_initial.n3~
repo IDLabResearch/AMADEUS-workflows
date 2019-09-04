@@ -1,0 +1,86 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+{?patient gps:selectedTemporalPath ?path.
+
+}
+=>
+{
+?patient gps:initialAggregatedPath ?path}.
+
+
+# mimicing the gps-plugin
+{?patient gps:aggregatedPath ?aggregatedPath.} <= {
+_:x e:trace "hier".
+	?patient gps:initialAggregatedPath ?initialAggregatedPath. 
+	?SCOPE gps:path_processing (() ?initialAggregatedPath ?aggregatedPath).
+}.
+
+{?SCOPE gps:path_processing (?Path ?initialAggregatedPath ?Path)} <= {
+	?initialAggregatedPath log:equalTo ().
+	() prolog:cut true.
+}.
+
+
+
+{?SCOPE gps:path_processing (?Path_s ?initialAggregatedPath ?Path)} <= {
+	?initialAggregatedPath list:first (?Action ?supposed_to ?start ?end).
+
+
+	?initialAggregatedPath list:rest ?path_r.
+
+	{?ST gps:description (?From ?between ?To ?Action ?Duration_n ?Cost_n ?Belief_n ?Comfort_n)} <= ?Where.
+	?SCOPE e:call ?From.
+	?SCOPE e:call ?Where.
+	(?Path_s ((?Action ?From ?To ?start ?end))) list:append ?Path_t.
+	?SCOPE gps:retract ?From.
+	?SCOPE gps:assert ?To.
+
+	
+	{?SCOPE gps:path_processing (?Path_t ?path_r ?Path)} e:finalize {
+	?SCOPE gps:retract ?To.
+	?SCOPE gps:assert ?From.
+  	}.
+}.
+
+
+{?SCOPE gps:path_processing (?Path_s ?initialAggregatedPath ?Path)} <= {
+	?initialAggregatedPath list:first (:goal ?to ?time).
+
+
+	?initialAggregatedPath list:rest ?path_r.
+ 
+				{
+				?SCOPE gps:findpath 
+        #(
+        #?goal
+				#?PATH ?DURATION ?COST ?BELIEF ?COMFORT (?md ?mc ?mb ?mco)).
+			  ?something.
+			  } => ?ooo.
+       ?something log:equalTo (?goal ?x1 ?x2 ?x3 ?x4 ?x5 ?x6).
+      
+ 
+	    ?SCOPE e:call ?goal.
+
+
+	(?Path_s ((:goal ?goal ?time))) list:append ?Path_t.
+  ?SCOPE gps:path_processing (?Path_t ?path_r ?Path).
+}.
+
+
+# support components
+{?SCOPE gps:retract ?Graph} <= {
+	?SCOPE e:call {?Graph e:graphList ?GraphList}.
+	({?GraphList list:member ?Triple} {(?Triple) prolog:retract true}) prolog:forall true.
+}.
+
+{?SCOPE gps:assert ?Graph} <= {
+	?SCOPE e:call {?Graph e:graphList ?GraphList}.
+	({?GraphList list:member ?Triple} {(?Triple) prolog:assert true}) prolog:forall true.
+}.

@@ -1,0 +1,25 @@
+#Processed by EYE v19.0817.2233 josd
+#eye --nope treatmentPlan/contraindications.n3 treatmentPlan/initialPathT1.n3 treatmentPlan/gps-desc.n3 treatmentPlan/gps-desc-details.n3 ../../Plugin/gps-plugin.n3 --query treatmentPlan/goal_neoadjuvant_chemoradiotherapy.n3q
+
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX sct: <http://snomed.info/id/>
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
+PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
+PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
+PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
+
+data:patient_1 gps:selectedPath ((action:Neodjuvant_chemoradiotherapy_episode1 action:Neoadjuvant_chemoradiotherapy_episode2 action:Neodjuvant_chemoradiotherapy_episode3 action:Neoadjuvant_chemoradiotherapy_episode4) 10368000.0 11320.0 0.96059601 0.40960000000000013).
+
+#2019-08-30T15:15:42.289Z in=36 out=1 ent=1 step=4 brake=2 inf=219926 sec=0.095 inf/sec=2315011
+#ENDS
+

@@ -17,8 +17,8 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
 PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
 
-data:patient_1 gps:initialAggregatedPath (((action:Neoadjuvant_chemoradiotherapy 1571758204 1576078204.0) gps:start 1571758204 ()) ((action:Neoadjuvant_chemoradiotherapy 1571758204 1576078204.0) gps:end 1576078204.0 ()) ((action:surgery_colon_cancer 1576078204.0 1576510204.0) gps:start 1576078204.0 ()) ((action:surgery_colon_cancer 1576078204.0 1576510204.0) gps:end 1576510204.0 ())).
+data:patient_1 gps:initialAggregatedPath (((action:Neoadjuvant_chemoradiotherapy 1571758204 1582126204.0) gps:start 1571758204 ()) ((action:Neoadjuvant_chemoradiotherapy 1571758204 1582126204.0) gps:end 1582126204.0 ()) ((action:surgery_colon_cancer 1582126204.0 1582558204.0) gps:start 1582126204.0 ()) ((action:surgery_colon_cancer 1582126204.0 1582558204.0) gps:end 1582558204.0 ())).
 
-#2019-08-29T14:50:00.935Z in=12 out=1 ent=14 step=34 brake=6 inf=155122 sec=0.057 inf/sec=2721439
+#2019-09-04T16:18:17.418Z in=12 out=1 ent=14 step=34 brake=6 inf=155155 sec=0.054 inf/sec=2873241
 #ENDS
 

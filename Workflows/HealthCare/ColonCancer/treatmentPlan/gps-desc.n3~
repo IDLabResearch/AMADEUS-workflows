@@ -35,7 +35,6 @@ PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
 	)
 } <= {
 	?patient a care:Patient. 
-_:x e:trace "hier".
 	?patient care:diagnosis sct:363406005.
 	?patient care:diagnosis sct:363351006.		###We simplified the test case with rectum cancer.
 

@@ -1,8 +1,8 @@
 PREFIX sct: <http://snomed.info/id/>
 PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
 PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
-
-
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
 
 data:patient_1 a 				care:Patient. 
 data:patient_1 care:age 		74 . 
@@ -31,3 +31,4 @@ data:patient_1 care:5yr_local_relapse_risk 	0 .
 
 #Influenza
 data:patient_1 care:diagnosis sct:6142004.
+action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:completed.

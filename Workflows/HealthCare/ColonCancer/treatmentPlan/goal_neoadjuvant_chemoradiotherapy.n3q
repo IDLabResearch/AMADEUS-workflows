@@ -17,8 +17,8 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
 PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
 
-{?U_13 gps:findpath ({action:Neoadjuvant_chemoradiotherapy gps:status gps:planned} ?U_14 ?U_15 ?U_16 ?U_17 ?U_18 (8640000.0 28294 0.45 0.25))} => {data:patient_1 gps:path (?U_14 ?U_15 ?U_16 ?U_17 ?U_18)}.
+{?U_13 gps:findpath ({action:Neoadjuvant_chemoradiotherapy gps:status gps:completed} ?U_14 ?U_15 ?U_16 ?U_17 ?U_18 (20736000.0 28294 0.45 0.25))} => {data:patient_1 gps:path (?U_14 ?U_15 ?U_16 ?U_17 ?U_18)}.
 
-#2019-08-29T14:50:01.001Z in=5 out=1 ent=1 step=2 brake=1 inf=102841 sec=0.052 inf/sec=1977712
+#2019-09-04T16:18:17.473Z in=5 out=1 ent=1 step=2 brake=1 inf=102911 sec=0.044 inf/sec=2338886
 #ENDS
 

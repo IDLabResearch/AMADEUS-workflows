@@ -1,0 +1,8 @@
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+
+
+{
+	?patient gps:aggregatedPath ?aggregatedPath.
+} => {
+	?patient gps:aggregatedPath ?aggregatedPath.
+}.

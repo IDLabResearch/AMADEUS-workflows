@@ -28,7 +28,7 @@ PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
 			?patient care:taken action:Neoadjuvant_chemoradiotherapy.
 		}
 		action:Neoadjuvant_chemoradiotherapy
-		"P50D"^^xsd:dayTimeDuration
+		"P120D"^^xsd:dayTimeDuration
 		14147
 		0.9
 		0.5
@@ -124,7 +124,7 @@ PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
 			?patient  care:5yr_local_relapse_risk 0.13 . 
 		}
 		action:Adjuvant_chemoradiotherapy
-		"P80D"^^xsd:dayTimeDuration
+		"P120D"^^xsd:dayTimeDuration
 		14147
 		0.9
 		0.5

@@ -1,0 +1,27 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+
+
+
+:rik a :User.
+
+
+:rik :location :work.
+
+:rik :owns :redBike.
+
+:redBike a :Bike;
+         :bikelocation :krook.
+
+
+:mathias :walkLimit 15.
+
+#not the most elegant way to solve the problem, will have to think about it.
+:jenny a :interimGoal .
+
+
+

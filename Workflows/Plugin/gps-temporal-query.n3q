@@ -1,0 +1,6 @@
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+
+{
+?patient gps:initialTemporal_path  ?path.
+}=>{	?patient gps:initialAggregatedPath  ?path.
+}.

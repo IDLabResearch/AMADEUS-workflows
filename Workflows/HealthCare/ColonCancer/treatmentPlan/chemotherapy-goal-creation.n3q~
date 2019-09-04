@@ -9,7 +9,7 @@ PREFIX sct: <http://snomed.info/id/>
 PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
 PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
 PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
-
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 
 
 {
@@ -31,12 +31,15 @@ PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
 		{
 		?SCOPE gps:findpath (
 		{
-			action:Neoadjuvant_chemoradiotherapy gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy gps:status gps:completed.
 		} 
 		?PATH ?DURATION ?COST ?BELIEF ?COMFORT (?DURATION_LIMIT ?COST_LIMIT ?BELIEF_LIMIT ?COMFORT_LIMIT)).
 	
 	} => {
 		?patient gps:path (?PATH ?DURATION ?COST ?BELIEF ?COMFORT).
+    ?patient gps:goal 		{
+			action:Neoadjuvant_chemoradiotherapy gps:status gps:completed.
+		} 
 	}.
 
 }.

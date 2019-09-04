@@ -17,10 +17,10 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 		{}
 		{}
 		{
-			action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:completed.
 		}
 		action:Neodjuvant_chemoradiotherapy_episode1
-		"P20D"^^xsd:dayTimeDuration
+		"P30D"^^xsd:dayTimeDuration
 		2830
 		0.99
 		0.8
@@ -28,11 +28,11 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 } <= {
 
 	
-	?patient gps:initialAggregatedPath ?selectedTemporalPath.
+#	?patient gps:initialAggregatedPath ?selectedTemporalPath.
 	
-	?selectedTemporalPath list:member ((action:Neoadjuvant_chemoradiotherapy ?start ?end) ?state ?time ?graph).
+#	?selectedTemporalPath list:member ((action:Neoadjuvant_chemoradiotherapy ?start ?end) ?state ?time ?graph).
 	
-	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:planned.}.
+	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:completed.}.
 	?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
@@ -43,18 +43,18 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 		{}
 		{}
 		{
-			action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:completed.
 		}
 		action:Neoadjuvant_chemoradiotherapy_episode2
-		"P20D"^^xsd:dayTimeDuration
+		"P30D"^^xsd:dayTimeDuration
 		2830
 		0.99
 		0.8
 	)
 } <= {
-	action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:planned.
+	action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:completed.
 	
-	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:planned.}.
+	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:completed.}.
   ?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
@@ -65,18 +65,18 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 		{}
 		{}
 		{
-			action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:completed.
 		}
 		action:Neodjuvant_chemoradiotherapy_episode3
-		"P20D"^^xsd:dayTimeDuration
+		"P30D"^^xsd:dayTimeDuration
 		2830
 		0.99
 		0.8
 	)
 } <= {
-	action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:planned.
+	action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:completed.
 	
-	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:planned.}.
+	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:completed.}.
   ?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
@@ -87,18 +87,18 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 		{}
 		{}
 		{
-			action:Neoadjuvant_chemoradiotherapy_episode4 gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy_episode4 gps:status gps:completed.
 		}
 		action:Neoadjuvant_chemoradiotherapy_episode4
-		"P20D"^^xsd:dayTimeDuration
+		"P30D"^^xsd:dayTimeDuration
 		2830
 		0.99
 		0.8
 	)
 } <= {
-	action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:planned.
+	action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:completed.
 	
-	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode4 gps:status gps:planned.}.
+	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode4 gps:status gps:completed.}.
   ?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }
 }. 
 
@@ -109,12 +109,12 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 ##	Ideally, the rule below should be included in the gps_knowledge.n3 file. It is kept here because for readability consideration.
 
 {
-			action:Neoadjuvant_chemoradiotherapy gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy gps:status gps:completed.
 }<={
-			action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:planned.
-			action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:planned.
-			action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:planned.
-			action:Neoadjuvant_chemoradiotherapy_episode4 gps:status gps:planned.
+			action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:completed.
+			action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:completed.
+			action:Neoadjuvant_chemoradiotherapy_episode3 gps:status gps:completed.
+			action:Neoadjuvant_chemoradiotherapy_episode4 gps:status gps:completed.
 		}.
 
 

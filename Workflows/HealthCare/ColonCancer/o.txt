@@ -1,0 +1,16 @@
+eye --nope treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3 patientData/Rosa_T2.n3 otherData/t4.ttl treatmentPlan/initial-aggreagated-path-t4.n3 ../../Plugin/findConflicts.n3 --query ../../Plugin/conflictGoal.n3
+EYE v19.0817.2233 josd
+SWI-Prolog 7.2.3 (amd64): Feb 12 2016, 23:26:21
+starting 30 [msec cputime] 34 [msec walltime]
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/treatmentPlan/gps-desc_influenza.n3 SC=3
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/treatmentPlan/contraindications.n3 SC=15
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/treatmentPlan/gps-desc-details.n3 SC=9
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/patientData/Rosa_T2.n3 SC=17
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/otherData/t4.ttl SC=1
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/HealthCare/ColonCancer/treatmentPlan/initial-aggreagated-path-t4.n3 SC=1
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/Plugin/findConflicts.n3 SC=11
+GET file:///media/doerthe/4EC6F987C6F97017/store/DiSSeCt/Workflows/Plugin/conflictGoal.n3 SC=2
+networking 28 [msec cputime] 32 [msec walltime]
+reasoning 1 [msec cputime] 2 [msec walltime]
+2019-09-04T16:18:18.317Z in=59 out=1 ent=1 step=1 brake=2 inf=204642 sec=0.059 inf/sec=3468508
+

@@ -1,0 +1,24 @@
+#Processed by EYE v19.0817.2233 josd
+#eye --nope patientData/Rosa_T2.n3 treatmentPlan/gps-desc_influenza.n3 ../../Plugin/gps-plugin.n3 --query treatmentPlan/gps-query-influenza.n3
+
+PREFIX sct: <http://snomed.info/id/>
+PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
+
+data:patient_1 gps:selectedPath ((action:take_oseltamivir) 864000.0 14.09 0.8 0.8).
+
+
+#2019-08-29T14:50:01.115Z in=28 out=3 ent=3 step=3 brake=2 inf=104678 sec=0.057 inf/sec=1836456
+#ENDS
+
