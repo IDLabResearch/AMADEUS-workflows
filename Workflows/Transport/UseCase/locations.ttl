@@ -1,0 +1,50 @@
+PREFIX : <http://www.example.org#>
+
+:krook a :Location;
+       :latitude 51.048920;
+       :longitude 3.728874.
+
+:home a :Location;
+     :latitude 51.054556;
+     :longitude 3.725333.
+
+:vrt a :Location;
+     :latitude 50.853085;
+     :longitude 4.402704.
+
+#bus stops (I hope that these are modeled in some vocabulary of Pieter?)
+:gent_vogelmarkt a :Tramstop, :Busstop;
+                 a :Location;
+                 :latitude 51.050602;
+                 :longitude 3.725649.
+:gent_sintpieters a :Tramstop, :Busstop, :Trainstop, :Location;
+                 :latitude 51.037086;
+                 :longitude 3.709679.
+
+:brussel_brusselNoord a :Trainstop, :Location;
+                 :latitude 50.860359;
+                 :longitude 4.360966.
+:brussel_gareDuNord a :Tramstop, :Busstop, :Location;
+                 :latitude 50.860730;
+                 :longitude 4.360241.
+
+:brussel_meiser a :Tramstop, :Busstop, :Location;
+                 :latitude 50.855386;
+                 :longitude 4.396973.
+:gent_korenmarkt a :Tramstop, :Location;
+                 :latitude 51.053999;
+                 :longitude 3.723286.
+
+
+:brussel_brusselCentraal a :Trainstop, :Location;
+                 :latitude 50.845503;
+                 :longitude 4.357023.
+
+
+:brussel_centraalstation a :Busstop, :Location;
+                 :latitude 50.845835;
+                 :longitude  4.357286.
+
+:brussel_max-plasky a :Busstop, :Location;
+                 :latitude 50.850988;
+                 :longitude 4.397039.
