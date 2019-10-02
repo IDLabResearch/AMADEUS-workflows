@@ -1,0 +1,19 @@
+#Processed by EYE v19.0817.2233 josd
+#eye --nope cleaned_out_t1.n3 --query find_fastest.n3
+
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+
+_:e_e_sk_0_1_1 gps:fasted (((:gent_sintpieters :koniginastridlaan :walk) (:koniginastridlaan :sabinesHome :get_donkey_bike) (:sabinesHome :krook :drop_donkey_bike) (:krook :home :bike)) 56.564289874477275 3.0 0.96059601 0.96059601).
+
+#2019-10-02T16:08:14.486Z in=27 out=1 ent=1 step=1 brake=2 inf=151458 sec=0.047 inf/sec=3222511
+#ENDS
+

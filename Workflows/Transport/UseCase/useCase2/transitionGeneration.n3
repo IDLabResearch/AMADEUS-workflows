@@ -1,0 +1,326 @@
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+
+
+{
+?x a :Location.
+?y a :Location.
+?x log:notEqualTo ?y.
+?x :walkable ?y. 
+(?x ?y) :dist ?dist.
+(?dist 1370) math:product ?duration.
+}
+=>
+{
+  {:walk gps:description (
+                          {
+                          ?user :location ?x.
+                          #?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+                          #?atime :time true.
+                          ?user :visited ?y.
+                          }
+                          #action name
+                          (?x ?y :walk)
+                          #Duration
+                          ?duration
+                          #cost
+                          0 #walking is for free
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+?user a :User.   
+#(?time 15) math:sum ?atime.
+   
+  }
+}.
+
+{
+?x a :Location.
+?y a :Location.
+?x log:notEqualTo ?y.
+?x :bikeable ?y.
+(?x ?y) :dist ?dist.
+(?dist 370) math:product ?duration.
+#_:x e:trace (?x ?y :bike).
+}
+=>
+{
+  {:bike gps:description (
+                          {
+                          ?user :location ?x.
+                          ?bike :bikelocation ?x.
+ #                         ?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+                          ?bike :bikelocation ?y.
+#                           ?atime :time :true.
+                           ?user :visited ?y.
+                          }
+                          #action name
+                          (?x ?y :bike)
+                          #Duration
+                          ?duration
+                          #cost
+                          0 #biking is for free
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+?user a :User.
+?bike a :Bike.
+?user :canTakeBike ?bike.
+#   (?time 15) math:sum ?atime.
+  }
+}.
+
+{
+#I assume Busstops and tramstops to be the same
+?x a :Busstop.
+?y a :Busstop.
+#assumption: I can take the bus to the same places I can bike to
+?x :bikeable ?y.
+?x log:notEqualTo ?y.
+(?x ?y) :dist ?dist.
+(?dist 350) math:product ?duration.
+}
+=>
+{
+  {:bus gps:description (
+                          {
+                          ?user :location ?x.
+  #                        ?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+ #                          ?atime :time :true.
+                           ?user :visited ?y.
+                          }
+                          #action name
+                          (?x ?y :bus)
+                          #Duration
+                          ?duration
+                          #cost
+                          3 #assume 3 Euro per trip
+                          #belief
+                          0.97
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+?user a :User.
+ #  (?time 20) math:sum ?atime.
+  }
+}.
+
+{
+?x a :Trainstop.
+?y a :Trainstop.
+?x log:notEqualTo ?y.
+(?x ?y) :dist ?dist.
+(?dist 61.6) math:product ?duration.
+(?dist 13.4) math:product ?cost.
+}
+=>
+{
+  {:train gps:description (
+                          {
+                          ?user :location ?x.
+  #                        ?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+   #                        ?atime :time :true.
+                           ?user :visited ?y.
+                          }
+                          #action name
+                          (?x ?y :train)
+                          #Duration
+                          ?duration
+                          #cost
+                          ?cost
+                          #belief
+                          0.97
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+?user a :User.
+#   (?time 20) math:sum ?atime.
+  }
+}.
+
+#donkey republic get bike
+{
+?x a :DonkeyRepublic-drop-off.
+?y a :Location.
+?x :bikeable ?y.
+?x log:notEqualTo ?y.
+(?x ?y) :dist ?dist.
+(?dist 370) math:product ?duration_pre.
+#I add 3 minutes to get the bike.
+(?duration_pre 3) math:sum ?duration.
+}
+=>
+{
+  {:donkey gps:description (
+                          {
+                          ?user :location ?x.
+                          ?bike :bikelocation ?x.
+                          ?bike :user :none.
+ #                         ?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+                          ?bike :bikelocation ?y.
+  #                         ?atime :time :true.
+                           ?user :visited ?y.
+                           ?bike :user ?user.
+                          }
+                          #action name
+                          (?x ?y :get_donkey_bike)
+                          #Duration
+                          ?duration
+                          #cost
+                          3
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+#?user a :User.
+#?bike a :DonkeyBike.
+
+  }
+}.
+
+
+
+#drop-off
+{
+?y a :DonkeyRepublic-drop-off.
+?x a :Location.
+?x :bikeable ?y.
+?x log:notEqualTo ?y.
+(?x ?y) :dist ?dist.
+(?dist 370) math:product ?duration_pre.
+#I add 3 minutes to drop the bike.
+(?duration_pre 3) math:sum ?duration.
+}
+=>
+{
+  {:donkey gps:description (
+                          {
+                          ?user :location ?x.
+                          ?bike :bikelocation ?x.
+                          ?bike :user ?user.
+ #                         ?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+                          ?bike :bikelocation ?y.
+  #                         ?atime :time :true.
+                           ?user :visited ?y.
+                           ?bike :user :none.
+                          }
+                          #action name
+                          (?x ?y :drop_donkey_bike)
+                          #Duration
+                          ?duration
+                          #cost
+                          0
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+?user a :User.
+?bike a :DonkeyBike.
+#   (?time 20) math:sum ?atime.
+  }
+}.
+
+#one step
+{
+?x a :DonkeyRepublic-drop-off.
+?y a :DonkeyRepublic-drop-off.
+?x :bikeable ?y.
+?x log:notEqualTo ?y.
+(?x ?y) :dist ?dist.
+(?dist 370) math:product ?duration_pre.
+#I add 3 minutes to drop the bike.
+(?duration_pre 3) math:sum ?duration.
+}
+=>
+{
+  {:donkey gps:description (
+                          {
+                          ?user :location ?x.
+                          ?bike :bikelocation ?x.
+                          
+ #                         ?time :time true.
+                          }
+                          {}
+                          {
+                          ?user :location ?y.
+                          ?bike :bikelocation ?y.
+  #                         ?atime :time :true.
+                           ?user :visited ?y.
+                          }
+                          #action name
+                          (?x ?y :one_donky_step)
+                          #Duration
+                          ?duration
+                          #cost
+                          3
+                          #belief
+                          0.99
+                          #comfort
+                          0.99
+                         )
+  } 
+  <= 
+  {#condition
+?user a :User.
+?bike a :DonkeyBike.
+?bike :user :none.
+#   (?time 20) math:sum ?atime.
+  }
+}.
+
+

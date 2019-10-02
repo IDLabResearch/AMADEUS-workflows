@@ -4,24 +4,43 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX gtfs: <http://vocab.gtfs.org/terms#>
 PREFIX : <http://www.example.org#>
 PREFIX math: <http://www.w3.org/2000/10/swap/math#>
-
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
 
 
 :rik a :User.
 
 
-:rik :location :work.
+
 
 :rik :owns :greenBike.
 
-:greenBike a :Bike;
-         :bikelocation :krook.
+:greenBike a :Bike.
 
 
 :rik :walkLimit 15.
 
 #not the most elegant way to solve the problem, will have to think about it.
-:jennysPlace a :interimGoal .
+:sabinesHome a :interimGoal .
 
+
+#donkey bikes
+:bike226774 a :DonkeyBike; :user :none.
+
+#additional rules
+
+
+{?user :canTakeBike ?bike}
+<=
+{
+?bike :user ?user.
+}.
+
+{?user :canTakeBike ?bike}
+<=
+{
+?user :owns ?bike.
+#here we say that the user should not take his own bike if he has still a donkey republic bike.
+_:x e:fail {?bike2 :user ?user}.
+}.
 
 

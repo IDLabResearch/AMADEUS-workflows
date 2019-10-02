@@ -2,99 +2,108 @@ PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX gtfs: <http://vocab.gtfs.org/terms#>
 PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
 
 
+#Sabine lives at Klossebos 22 in Zwijnaarde
+:sabinesHome a :Location;
+           :latitude 51.000181;
+           :longitude 3.683657.
+
+#de krook
+:krook a :Location, :DonkeyRepublic-drop-off;
+       :latitude 51.048920;
+       :longitude 3.728874.
 
 
+#Rik works at KBR in Brussel
+:work a :Location;
+      :latitude 50.843374;
+      :longitude 4.356101.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:krook a :Location;
-       :longitude 51.048920;
-       :latitude 3.728874.
-
+#Home: sint-lievenspoortstraat 242 Gent
 :home a :Location;
-     :longitude 51.054556;
-     :latitude 3.725333.
+     :latitude 51.040889;
+     :longitude 3.736624.
 
-:vrt a :Location;
-     :longitude 50.853085;
-     :latitude 4.402704.
 
-#bus stops (I hope that these are modeled in some vocabulary of Pieter?)
-:gent_vogelmarkt a :Tramstop, :Busstop;
-                 a :Location;
-                 :longitude 51.050602;
-                 :latitude 3.725649. 
+
+#bus stops: maybe add the uris from linked connections?
 :gent_sintpieters a :Tramstop, :Busstop, :Trainstop, :Location;
-                 :longitude 51.037086;
-                 :latitude 3.709679.
-
-:brussel_brusselNoord a :Trainstop, :Location;
-                 :longitude 50.860359;
-                 :latitude 4.360966.
-:brussel_gareDuNord a :Tramstop, :Busstop, :Location;
-                 :longitude 50.860730;
-                 :latitude 4.360241.
-
-:brussel_meiser a :Tramstop, :Busstop, :Location;
-                 :longitude 50.855386;
-                 :latitude 4.396973.
-:gent_korenmarkt a :Tramstop, :Location;
-                 :longitude 51.053999;
-                 :latitude 3.723286.
-
+                 :latitude 51.037086;
+                 :longitude 3.709679.
 
 :brussel_brusselCentraal a :Trainstop, :Location;
-                 :longitude 50.845503;
-                 :latitude 4.357023.
+                 :latitude 50.845503;
+                 :longitude 4.357023.
+
+:zwijnaarde_vogelheide a :Busstop; a :Location;
+                 :latitude 51.000007;
+                 :longitude 3.683507.
+
+:gent_vogelmarkt a :Tramstop, :Busstop;
+                 a :Location;
+                 :latitude 51.050602;
+                 :longitude 3.725649. 
 
 
-:brussel_centraalstation a :Busstop, :Location;
-                 :longitude 50.845835;
-                 :latitude  4.357286.
-
-:brussel_max-plasky a :Busstop, :Location;
-                 :longitude 50.850988; 
-                 :latitude 4.397039.
 
 
-:brussel_brusselCentraal :verycloseTo :brussel_centraalstation.
-:brussel_centraalstation  :verycloseTo :brussel_brusselCentraal .
-:brussel_brusselNoord :verycloseTo :brussel_gareDuNord. 
-:brussel_gareDuNord :verycloseTo :brussel_brusselNoord.
 
-{?x :walkable ?y} <= {?x :veryClose ?y. ("!") e:derive true.}.
-{?x :walkable ?y} <= {?x :longitude ?l. ?y :longitude ?ll. (?ll ?l ) math:difference ?d. ?d math:absoluteValue ?dd. (?dd ?x ?y) :check 0.01.  }.
+#donkey republic dropp-offs
+:koniginastridlaan a :DonkeyRepublic-drop-off, :Location;
+                   :latitude 51.036465;
+                   :longitude 3.712963.
 
-{(?d ?x ?y) :check ?value.} <= {?d math:greaterThan ?value. ("!") e:derive true. ("fail") e:derive true.}.
-{(?d ?x ?y) :check ?value.} <= {?x :latitude ?l. ?y :latitude ?ll. (?ll ?l ) math:difference ?d2. ?d2 math:absoluteValue ?dd2. (?d ?dd2) :checkd ?value.  }.
 
-{(?d ?d2) :checkd ?value. } <= {?d2 math:greaterThan ?value. ("!") e:derive true. ("fail") e:derive true.}.
-{(?d ?d2) :checkd ?value. } <= {}.
 
-{?x :bikeable ?y} <= {?x :walkable ?y. ("!") e:derive true.}.
-{?x :bikeable ?y} <= {?x :longitude ?l. ?y :longitude ?ll. (?ll ?l ) math:difference ?d. ?d math:absoluteValue ?dd.    
+:gentZuid a :DonkeyRepublic-drop-off, :Location;
+                   :latitude 51.049502;
+                   :longitude 3.730300.
+
+
+#{?x :walkable ?y} <= {?x :latitude ?l. ?y :latitude ?ll. (?ll ?l ) math:difference ?d. ?d math:absoluteValue ?dd. (?dd ?x ?y) :check 0.01.  }.
+
+#{(?d ?x ?y) :check ?value.} <= {?d math:greaterThan ?value. ("!") e:derive true. ("fail") e:derive true.}.
+#{(?d ?x ?y) :check ?value.} <= {?x :longitude ?l. ?y :longitude ?ll. (?ll ?l ) math:difference ?d2. ?d2 math:absoluteValue ?dd2. (?d ?dd2) :checkd ?value.  }.
+
+#{(?d ?d2) :checkd ?value. } <= {?d2 math:greaterThan ?value. ("!") e:derive true. ("fail") e:derive true.}.
+#{(?d ?d2) :checkd ?value. } <= {}.
+
+#{?x :bikeable ?y} <= {?x :walkable ?y. ("!") e:derive true.}.
+#{?x :bikeable ?y} <= {?x :latitude ?l. ?y :latitude ?ll. (?ll ?l ) math:difference ?d. ?d math:absoluteValue ?dd.    
 #_:x e:trace ?dd. 
-(?dd ?x ?y) :check 0.4.  }.
+#(?dd ?x ?y) :check 0.4.  }.
 
+{(?x ?y) :dist ?dist. ?dist math:lessThan 0.012}=>{?x :walkable ?y}.
+{(?x ?y) :dist ?dist. ?dist math:lessThan 0.1}=>{?x :bikeable ?y}.
 
+#distance between locations, we need that to calculate the weights.
+{
+?x a :Location;
+   :latitude ?lx1;
+   :longitude ?lx2.
+?y a :Location;
+   :latitude ?ly1;
+   :longitude ?ly2.
 
+#euclidean distance
+(?lx1 ?ly1) math:difference ?d1.
+(?lx2 ?ly2) math:difference ?d2.
+
+(?d1 ?d1) math:product ?d1_square.
+(?d2 ?d2) math:product ?d2_square.
+
+(?d1_square ?d2_square) math:sum ?sum.
+("sqrt" ?sum ?dist) e:derive true.
+
+}
+=>
+{
+(?x ?y) :dist ?dist.
+}.
 
 
 

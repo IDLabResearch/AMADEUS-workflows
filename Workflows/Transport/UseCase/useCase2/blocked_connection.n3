@@ -1,0 +1,7 @@
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+
+
+(:gent_sintpieters :zwijnaarde_vogelheide :bus) :is :blocked.

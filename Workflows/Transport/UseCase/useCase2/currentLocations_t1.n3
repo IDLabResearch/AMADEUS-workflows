@@ -1,0 +1,12 @@
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+
+:rik :location :gent_sintpieters.
+
+:greenBike :bikelocation :krook.
+
+:bike226774 :bikelocation :koniginastridlaan.
+
+

@@ -1,0 +1,14 @@
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+
+
+{
+?x gps:goodPath (?path ?x1 ?x2 ?x3 ?x4).
+
+_:x e:findall ( 1 {?x111 gps:goodPath (?path1 ?x11 ?x21 ?x31 ?x41). ?x11 math:lessThan ?x1} () ).
+}
+=>
+{
+?x gps:fasted  (?path ?x1 ?x2 ?x3 ?x4)
+}.

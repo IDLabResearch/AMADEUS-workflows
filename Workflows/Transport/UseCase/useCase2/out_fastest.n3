@@ -1,0 +1,19 @@
+#Processed by EYE v19.0817.2233 josd
+#eye --nope cleaned_out.n3 --query find_fastest.n3
+
+PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
+PREFIX lc: <http://semweb.mmlab.be/ns/linkedconnections#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX gtfs: <http://vocab.gtfs.org/terms#>
+PREFIX : <http://www.example.org#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+
+_:e_e_sk_15_1_1 gps:fasted (((:work :brussel_brusselCentraal :walk) (:brussel_brusselCentraal :gent_sintpieters :train) (:gent_sintpieters :zwijnaarde_vogelheide :bus) (:zwijnaarde_vogelheide :sabinesHome :walk) (:sabinesHome :zwijnaarde_vogelheide :walk) (:zwijnaarde_vogelheide :gent_vogelmarkt :bus) (:gent_vogelmarkt :krook :walk) (:krook :home :bike)) 93.43777097797147 15.046323031397954 0.8679429418123826 0.92274469442792).
+
+#2019-10-02T16:08:05.447Z in=21 out=1 ent=1 step=1 brake=2 inf=144552 sec=0.047 inf/sec=3075574
+#ENDS
+
