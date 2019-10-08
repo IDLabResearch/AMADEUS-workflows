@@ -20,6 +20,6 @@ PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
 
 data:patient_1 gps:initialAggregatedPath (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:start 1571758204 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:end 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:start 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:start 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:end 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:start 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:end 1582126204.0 ())).
 
-#2019-09-04T16:18:17.619Z in=18 out=1 ent=24 step=81 brake=10 inf=230989 sec=0.063 inf/sec=3666492
+#2019-10-08T21:30:48.952Z in=18 out=1 ent=24 step=81 brake=10 inf=233551 sec=0.066 inf/sec=3538652
 #ENDS
 

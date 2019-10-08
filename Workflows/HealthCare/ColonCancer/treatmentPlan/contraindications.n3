@@ -19,6 +19,7 @@ PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
 {
 		?patient a  care:Patient. 
 		?patient  care:diagnosis sct:6142004. #influenza
+_:x e:trace "c1".
 }.
 
 
@@ -30,6 +31,7 @@ PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
 		?patient a  care:Patient. 
 		?patient  therapy:medication ?med.
     ?med medication:contraindication therapy:chemoradiotherapy. 
+_:x e:trace "c2".
 }.
 
 

@@ -20,6 +20,6 @@ PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
 
 data:patient_1 gps:initialAggregatedPath (((action:take_oseltamivir 1572869700 1573733700.0) gps:start 1572869700 ()) ((action:take_oseltamivir 1572869700 1573733700.0) gps:end 1573733700.0 ())).
 
-#2019-09-04T16:18:17.867Z in=12 out=1 ent=9 step=18 brake=4 inf=97865 sec=0.048 inf/sec=2038854
+#2019-10-08T21:30:49.186Z in=12 out=1 ent=9 step=18 brake=4 inf=97855 sec=0.042 inf/sec=2329881
 #ENDS
 

@@ -20,6 +20,6 @@ PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
 
 data:patient_1 gps:path ((action:Neodjuvant_chemoradiotherapy_episode1 action:Neoadjuvant_chemoradiotherapy_episode2 action:Neodjuvant_chemoradiotherapy_episode3 action:Neoadjuvant_chemoradiotherapy_episode4) 10368000.0 11320.0 0.96059601 0.40960000000000013).
 
-#2019-09-04T16:18:17.544Z in=36 out=1 ent=1 step=1 brake=2 inf=209200 sec=0.057 inf/sec=3670175
+#2019-10-08T21:30:48.873Z in=36 out=1 ent=1 step=1 brake=2 inf=210955 sec=0.056 inf/sec=3767054
 #ENDS
 
