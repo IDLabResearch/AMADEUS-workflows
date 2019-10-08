@@ -10,5 +10,5 @@ _:x e:findall ( 1 {?x111 gps:goodPath (?path1 ?x11 ?x21 ?x31 ?x41). ?x11 math:le
 }
 =>
 {
-?x gps:fasted  (?path ?x1 ?x2 ?x3 ?x4)
+?x gps:fastest  (?path ?x1 ?x2 ?x3 ?x4)
 }.

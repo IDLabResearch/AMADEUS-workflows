@@ -12,8 +12,8 @@ PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
 PREFIX log: <http://www.w3.org/2000/10/swap/log#>
 PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 
-_:e_e_sk_0_1_1 gps:fasted (((:gent_sintpieters :koniginastridlaan :walk) (:koniginastridlaan :sabinesHome :get_donkey_bike) (:sabinesHome :krook :drop_donkey_bike) (:krook :home :bike)) 56.564289874477275 3.0 0.96059601 0.96059601).
+_:e_e_sk_0_1_1 gps:fastest (((:gent_sintpieters :koniginastridlaan :walk) (:koniginastridlaan :sabinesHome :get_donkey_bike) (:sabinesHome :krook :drop_donkey_bike) (:krook :home :bike)) 56.564289874477275 3.0 0.96059601 0.96059601).
 
-#2019-10-02T16:08:14.486Z in=27 out=1 ent=1 step=1 brake=2 inf=151458 sec=0.047 inf/sec=3222511
+#2019-10-08T21:57:08.507Z in=27 out=1 ent=1 step=1 brake=2 inf=151488 sec=0.049 inf/sec=3091592
 #ENDS
 

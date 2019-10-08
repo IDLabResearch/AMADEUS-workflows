@@ -12,8 +12,8 @@ PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
 PREFIX log: <http://www.w3.org/2000/10/swap/log#>
 PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 
-_:e_e_sk_15_1_1 gps:fasted (((:work :brussel_brusselCentraal :walk) (:brussel_brusselCentraal :gent_sintpieters :train) (:gent_sintpieters :zwijnaarde_vogelheide :bus) (:zwijnaarde_vogelheide :sabinesHome :walk) (:sabinesHome :zwijnaarde_vogelheide :walk) (:zwijnaarde_vogelheide :gent_vogelmarkt :bus) (:gent_vogelmarkt :krook :walk) (:krook :home :bike)) 93.43777097797147 15.046323031397954 0.8679429418123826 0.92274469442792).
+_:e_e_sk_15_1_1 gps:fastest (((:work :brussel_brusselCentraal :walk) (:brussel_brusselCentraal :gent_sintpieters :train) (:gent_sintpieters :zwijnaarde_vogelheide :bus) (:zwijnaarde_vogelheide :sabinesHome :walk) (:sabinesHome :zwijnaarde_vogelheide :walk) (:zwijnaarde_vogelheide :gent_vogelmarkt :bus) (:gent_vogelmarkt :krook :walk) (:krook :home :bike)) 93.43777097797147 15.046323031397954 0.8679429418123826 0.92274469442792).
 
-#2019-10-02T16:08:05.447Z in=21 out=1 ent=1 step=1 brake=2 inf=144552 sec=0.047 inf/sec=3075574
+#2019-10-08T21:56:59.642Z in=21 out=1 ent=1 step=1 brake=2 inf=144541 sec=0.046 inf/sec=3142196
 #ENDS
 
