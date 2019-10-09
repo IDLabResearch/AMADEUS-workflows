@@ -21,8 +21,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ns1: <http://josd.github.io/fluid/gps/action#>
 PREFIX : <http://josd.github.io/fluid#>
 
-data:patient_1 gps:checkedPathAndGoals (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:start 1571758204 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:end 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:start 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:start 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:end 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:start 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:end 1582126204.0 ())).
+data:patient_1 gps:checkedPath (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:start 1571758204 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:end 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:start 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:start 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:end 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:start 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:end 1582126204.0 ())).
 
-#2019-10-08T21:30:49.069Z in=64 out=1 ent=2 step=2 brake=3 inf=200962 sec=0.057 inf/sec=3525649
+#2019-10-09T13:41:33.453Z in=64 out=1 ent=2 step=2 brake=3 inf=200561 sec=0.057 inf/sec=3518614
 #ENDS
 

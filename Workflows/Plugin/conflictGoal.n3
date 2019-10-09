@@ -24,6 +24,6 @@ action:Neoadjuvant_chemoradiotherapy gps:status gps:completed.
 #todo: make automatic check here
 }
 =>
-{?patient gps:checkedPathAndGoals ?path}.
+{?patient gps:checkedPath ?path}.
 
 {?x gps:failedCall ?y.}=>{?x gps:failedCall ?y}.

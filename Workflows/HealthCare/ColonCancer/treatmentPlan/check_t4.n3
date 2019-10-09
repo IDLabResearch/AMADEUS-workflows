@@ -23,6 +23,6 @@ PREFIX : <http://josd.github.io/fluid#>
 
 (action:Neoadjuvant_chemoradiotherapy_episode2 gps:start 1574350204.0) gps:failedCall {action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:completed. _:sk_0 e:fail {action:Neoadjuvant_chemoradiotherapy_episode2 gps:status gps:completed}. _:sk_0 e:fail {_:sk_1 therapy:hasContraindicationForChemotherapy true}}.
 
-#2019-10-08T21:30:49.574Z in=68 out=1 ent=1 step=1 brake=3 inf=224362 sec=0.059 inf/sec=3802746
+#2019-10-09T13:41:33.939Z in=68 out=1 ent=1 step=1 brake=3 inf=224087 sec=0.060 inf/sec=3734783
 #ENDS
 

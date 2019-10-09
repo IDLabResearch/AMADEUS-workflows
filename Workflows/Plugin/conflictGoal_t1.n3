@@ -20,6 +20,6 @@ PREFIX sct: <http://snomed.info/id/>
 action:Neoadjuvant_chemoradiotherapy gps:status gps:completed.
 }
 =>
-{?patient gps:checkedPathAndGoals ?path}.
+{?patient gps:checkedPath ?path}.
 
 {?x gps:failedCall ?y.}=>{?x gps:failedCall ?y}.
