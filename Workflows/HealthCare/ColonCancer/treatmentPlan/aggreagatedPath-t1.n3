@@ -1,0 +1,26 @@
+#Processed by EYE v19.0817.2233 josd
+#eye --nope ../../Plugin/initialToAggregated.n3 treatmentPlan/sub_initialPathT1.n3 --query ../../Plugin/gps-aggregation-query.n3q
+
+PREFIX sct: <http://snomed.info/id/>
+PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
+PREFIX care: <https://gitlab.ilabt.imec.be/KNoWS/dissect/care#>
+PREFIX gps: <http://josd.github.io/eye/reasoning/gps/gps-schema#>
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>
+PREFIX action: <https://gitlab.ilabt.imec.be/KNoWS/dissect/action#>
+PREFIX log: <http://www.w3.org/2000/10/swap/log#>
+PREFIX string: <http://www.w3.org/2000/10/swap/string#>
+PREFIX therapy: <https://gitlab.ilabt.imec.be/KNoWS/dissect/therapy#>
+PREFIX surgery: <https://gitlab.ilabt.imec.be/KNoWS/dissect/surgery#>
+PREFIX list: <http://www.w3.org/2000/10/swap/list#>
+PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
+PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
+PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+data:patient_1 gps:aggregatedPath (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:start 1571758204 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:end 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:start 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:start 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:end 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:start 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:end 1582126204.0 ())).
+
+#2019-10-09T13:41:33.382Z in=3 out=1 ent=2 step=4 brake=2 inf=51302 sec=0.035 inf/sec=1465771
+#ENDS
+
