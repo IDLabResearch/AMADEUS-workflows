@@ -20,6 +20,6 @@ data:patient_1 gps:path ((action:take_oseltamivir) 864000.0 14.09 0.8 0.8).
 data:patient_1 gps:path ((action:take_zanamivir) 1036800.0 99.71 0.8 0.9).
 data:patient_1 gps:path ((action:wait) 1382400.0 0.0 0.7 0.7).
 
-#2019-10-08T21:30:49.132Z in=28 out=3 ent=3 step=3 brake=2 inf=105574 sec=0.051 inf/sec=2070078
+#2019-10-09T13:41:33.513Z in=28 out=3 ent=3 step=3 brake=2 inf=105800 sec=0.048 inf/sec=2204167
 #ENDS
 

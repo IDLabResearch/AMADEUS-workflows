@@ -23,6 +23,6 @@ PREFIX : <http://josd.github.io/fluid#>
 
 data:patient_1 gps:initialAggregatedPath (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:start 1571758204 ()) ((action:take_oseltamivir 1573923600 1574787600.0) gps:start 1573923600 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:end 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:start 1574350204.0 ()) ((action:take_oseltamivir 1573923600 1574787600.0) gps:end 1574787600.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:start 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:end 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:start 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:end 1582126204.0 ())).
 
-#2019-10-08T21:30:49.501Z in=9 out=1 ent=13 step=54 brake=9 inf=298001 sec=0.084 inf/sec=3547631
+#2019-10-09T13:41:33.865Z in=9 out=1 ent=13 step=54 brake=9 inf=298224 sec=0.078 inf/sec=3823385
 #ENDS
 
