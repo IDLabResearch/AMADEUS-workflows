@@ -11,29 +11,45 @@ PREFIX prolog: <http://eulersharp.sourceforge.net/2003/03swap/prolog#>
 PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 
+{?patient gps:checkedPath ?path}
+=>
+{?patient gps:checkedPath2 ?path}.
+
+
 
 {?patient gps:checkedPath ?path}
 <=
 {
-?patient gps:initialAggregatedPath ?path.
-?patient gps:check ?path.
+("!") e:derive true.
+?patient gps:initialAggregatedPath ?path2.
+("!") e:derive true.
+
+?patient gps:check ?path2.
+
+?path2 log:equalTo ?path.
+
+#this ugly little hack should not be needed I will ask Jos why the program doesn't work without it.
+("assert" {?patient gps:checkedPath ?path}) e:derive true.
+
 }.
 
 
-{?patient gps:check ()}<={ ("!") e:derive true}.
+
+{?patient gps:check ()}<={ ("!") e:derive true. }.
 
 
 {?patient gps:check ?path }
 <=
 {
+
 ?path rdf:first ?first.
 ?first log:equalTo (?list ?startstop ?time ?graph).
 
 
 (?list ?startstop ?time ?graph) gps:evaluate true.
 
+("!") e:derive true.
 ?path rdf:rest ?rest.
-
 ?patient gps:check ?rest.
 }.
 
@@ -44,7 +60,8 @@ PREFIX func: <http://www.w3.org/2007/rif-builtin-function#>
 {
 gps:CurrentTime gps:value ?now.
 ?time math:lessThan ?now.
-("!") e:derive true
+("!") e:derive true.
+
 }.
 
 #did the action start and also stop in the past? then we can also ignore it
@@ -55,7 +72,8 @@ gps:CurrentTime gps:value ?now.
 ?time math:lessThan ?now.
 ?list log:equalTo (?action ?start ?stop).
 ?stop math:lessThan ?now.
-("!") e:derive true
+("!") e:derive true.
+
 }.
 
 #is the action ongoing? then we need to remember the to-state (can be a problem)
@@ -67,7 +85,6 @@ gps:CurrentTime gps:value ?now.
 ?list log:equalTo (?action ?start ?stop).
 ?stop math:notLessThan ?now.
 ("!") e:derive true.
-
 {
 	?map gps:description (
 		?from
@@ -81,13 +98,18 @@ gps:CurrentTime gps:value ?now.
 	)
 } <= ?where.
 ("!") e:derive true. 
-{} e:becomes {(?action ?start ?stop ) gps:to ?to.}.
+
+
+
+("assert" {(?action ?start ?stop ) gps:to ?to.}) e:derive true.
+_:x e:call {(?action ?start ?stop ) gps:to ?to.}.
 }.
 
 #future stop
 {(?list gps:end ?time ?graph) gps:evaluate true.}
 <=
 {
+
 gps:CurrentTime gps:value ?now.
 ?time math:notLessThan ?now.
 ("!") e:derive true.
@@ -114,13 +136,23 @@ gps:CurrentTime gps:value ?now.
 ("!") e:derive true.
 
 
-?sc e:optional {?jj e:call ?between.}.
+#?sc e:optional {?jj e:call ?between.}.
+?sc gps:optional ?between.
+
+
 (?action gps:end ?time) gps:callOrError ?between.
+
+
 #?scope e:call ?between.
 
 ("!") e:derive true.
 
+
+
 ?between e:becomes ?iniTo.
+
+
+
 
 }.
 
@@ -151,18 +183,40 @@ gps:CurrentTime gps:value ?now.
 } <= ?where.
 
 ("!") e:derive true.
-?sc e:optional {?jj e:call ?from.}.
+
+?sc gps:optional ?from.
 (?action gps:start ?time) gps:callOrError ?from.
 
+
 ("!") e:derive true.
-?sc e:optional {?jj e:call ?where.}.
+
+?sc gps:optional ?where.
 (?action gps:start ?time) gps:callOrError ?where.
 
-{} e:becomes {(?action ?start ?stop ) gps:to ?to. true}.
+
+("assert" {(?action ?start ?stop ) gps:to ?to. }) e:derive true.
+
+_:x e:call {(?action ?start ?stop ) gps:to ?to. }.
+
 ("!") e:derive true.
 ?from e:becomes ?between.
+
+
+
+_:x e:call ?between.
+
 ("!") e:derive true.
+
+
 }.
+
+{?x gps:callOrError {}}<={
+("!") e:derive true.
+
+
+}.
+
+
 
 {?x gps:callOrError {}}<={
 ("!") e:derive true.
@@ -189,8 +243,20 @@ _:x e:call ?y.
 }.
 
 
+{?x gps:optional ?b}
+<=
+{
+?x e:call ?b.
+}.
+{?x gps:optional ?b} <={}.
 
 
 
+{?x gps:retract {}}<={ ("!") e:derive true.}.
+{?x gps:retract ?y} <= { ?x e:call ?y. ("retract" ?y) e:derive true.}.
 
+{?x gps:assert {}}<= { ("!") e:derive true.} .
+{?x gps:assert ?y} <= {  ("assertz" ?y) e:derive true. ?x e:call ?y. }.
+#{?x gps:assert ?y}<= { {} e:becomes ?y.}.
 
+{?patient gps:initialAggregatedPath ?aggregatedPath.}<={?patient gps:aggregatedPath ?aggregatedPath.}.

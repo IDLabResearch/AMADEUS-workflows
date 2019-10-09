@@ -1,5 +1,5 @@
 #Processed by EYE v19.0817.2233 josd
-#eye --nope treatmentPlan/InfluenzaPathT3.n3 treatmentPlan/aggreagatedPath-t1.n3 ../../Plugin/gps-aggregataion-rule.n3 --query ../../Plugin/gps-temporal-query.n3q
+#eye --nope treatmentPlan/InfluenzaPathT4.n3 treatmentPlan/aggreagatedPath-t1.n3 ../../Plugin/gps-aggregataion-rule.n3 --query ../../Plugin/gps-temporal-query.n3q
 
 PREFIX sct: <http://snomed.info/id/>
 PREFIX data: <https://gitlab.ilabt.imec.be/KNoWS/dissect/data#>
@@ -21,8 +21,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ns1: <http://josd.github.io/fluid/gps/action#>
 PREFIX : <http://josd.github.io/fluid#>
 
-data:patient_1 gps:initialAggregatedPath (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:start 1571758204 ()) ((action:take_oseltamivir 1572869700 1573733700.0) gps:start 1572869700 ()) ((action:take_oseltamivir 1572869700 1573733700.0) gps:end 1573733700.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:end 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:start 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:start 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:end 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:start 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:end 1582126204.0 ())).
+data:patient_1 gps:initialAggregatedPath (((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:start 1571758204 ()) ((action:take_oseltamivir 1573923600 1574787600.0) gps:start 1573923600 ()) ((action:Neodjuvant_chemoradiotherapy_episode1 1571758204 1574350204.0) gps:end 1574350204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:start 1574350204.0 ()) ((action:take_oseltamivir 1573923600 1574787600.0) gps:end 1574787600.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode2 1574350204.0 1576942204.0) gps:end 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:start 1576942204.0 ()) ((action:Neodjuvant_chemoradiotherapy_episode3 1576942204.0 1579534204.0) gps:end 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:start 1579534204.0 ()) ((action:Neoadjuvant_chemoradiotherapy_episode4 1579534204.0 1582126204.0) gps:end 1582126204.0 ())).
 
-#2019-09-04T16:18:18.243Z in=9 out=1 ent=13 step=53 brake=9 inf=293898 sec=0.077 inf/sec=3816857
+#2019-10-08T21:30:49.501Z in=9 out=1 ent=13 step=54 brake=9 inf=298001 sec=0.084 inf/sec=3547631
 #ENDS
 

@@ -44,7 +44,10 @@ eye --nope ../../Plugin/initialToAggregated.n3 treatmentPlan/sub_initialPathT1.n
 # -- Part 4 --
 
 #T1: first session chemo is taken, check whether we are still "on track" (not sure whether this should be in the demo)
-eye --nope patientData/Rosa.n3 otherData/t1.ttl treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3  treatmentPlan/sub_initialPathT1.n3 ../../Plugin/gps-plugin-validation.n3 --query treatmentPlan/goal_neoadjuvant_chemoradiotherapy.n3q > result_t1.n3
+#eye --nope patientData/Rosa_T1.n3 otherData/t1.ttl treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3  treatmentPlan/aggreagatedPath-t1.n3 ../../Plugin/gps-plugin-validation.n3 --query treatmentPlan/goal_neoadjuvant_chemoradiotherapy.n3q > result_t1.n3
+
+eye --nope treatmentPlan/gps-desc-details.n3 treatmentPlan/contraindications.n3  patientData/Rosa.n3 otherData/t1.ttl treatmentPlan/aggreagatedPath-t1.n3 ../../Plugin/findConflicts.n3 --query ../../Plugin/conflictGoal_t1.n3 > treatmentPlan/check_t1.n3 --tactic limited-answer 1
+
 
 # State is now changed
 
@@ -68,10 +71,11 @@ eye  treatmentPlan/influenzaChosenPath.n3 otherData/t3.ttl ../../Plugin/gps-temp
 #make aggregated path
 eye --nope treatmentPlan/InfluenzaPathT3.n3 treatmentPlan/aggreagatedPath-t1.n3 ../../Plugin/gps-aggregataion-rule.n3 --query ../../Plugin/gps-temporal-query.n3q > treatmentPlan/initial-aggreagated-path-t3.n3
 
-eye --nope patientData/Rosa_T2.n3  otherData/t3.ttl treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3 treatmentPlan/initial-aggreagated-path-t3.n3 ../../Plugin/gps-plugin-aggregated-path-processing.n3 --tactic limited-answer 1 --query ../../Plugin/gps-aggregation-query.n3q > treatmentPlan/aggreagated-path-t3.n3
 
 #validate aggregated path
-eye --nope treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3   patientData/Rosa_T2.n3 otherData/t3.ttl treatmentPlan/initial-aggreagated-path-t3.n3 ../../Plugin/findConflicts.n3 --query ../../Plugin/conflictGoal.n3 >treatmentPlan/check_t3.n3
+eye --nope treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3   patientData/Rosa_T2.n3 otherData/t3.ttl treatmentPlan/initial-aggreagated-path-t3.n3 ../../Plugin/findConflicts.n3  --query ../../Plugin/conflictGoal.n3 >treatmentPlan/check_t3.n3 --tactic limited-answer 1
+
+
 
 
 
@@ -80,7 +84,7 @@ eye --nope treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n
 eye  treatmentPlan/influenzaChosenPath.n3 otherData/t4.ttl ../../Plugin/gps-temporal-rule.n3 treatmentPlan/gps-desc_influenza.n3 --query ../../Plugin/gps-temporal-query.n3q --nope > treatmentPlan/InfluenzaPathT4.n3
 
 #make aggregated path (only times + start/end)
-eye --nope treatmentPlan/InfluenzaPathT3.n3 treatmentPlan/aggreagatedPath-t1.n3 ../../Plugin/gps-aggregataion-rule.n3 --query ../../Plugin/gps-temporal-query.n3q > treatmentPlan/initial-aggreagated-path-t4.n3
+eye --nope treatmentPlan/InfluenzaPathT4.n3 treatmentPlan/aggreagatedPath-t1.n3 ../../Plugin/gps-aggregataion-rule.n3 --query ../../Plugin/gps-temporal-query.n3q > treatmentPlan/initial-aggreagated-path-t4.n3
 
 #validate aggregated path
-eye --nope treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3   patientData/Rosa_T2.n3 otherData/t4.ttl treatmentPlan/initial-aggreagated-path-t4.n3 ../../Plugin/findConflicts.n3 --query ../../Plugin/conflictGoal.n3 > treatmentPlan/check_t4.n3 2> o.txt
+eye --nope treatmentPlan/gps-desc_influenza.n3 treatmentPlan/contraindications.n3 treatmentPlan/gps-desc-details.n3   patientData/Rosa_T2.n3 otherData/t4.ttl treatmentPlan/initial-aggreagated-path-t4.n3 ../../Plugin/findConflicts.n3 --query ../../Plugin/conflictGoal.n3 > treatmentPlan/check_t4.n3 --tactic limited-answer 1

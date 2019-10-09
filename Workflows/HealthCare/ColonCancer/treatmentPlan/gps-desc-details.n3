@@ -30,7 +30,7 @@ PREFIX list: <http://www.w3.org/2000/10/swap/list#>
 	
 #	?patient gps:initialAggregatedPath ?selectedTemporalPath.
 	
-#	?selectedTemporalPath list:member ((action:Neoadjuvant_chemoradiotherapy ?start ?end) ?state ?time ?graph).
+	?selectedTemporalPath list:member ((action:Neoadjuvant_chemoradiotherapy ?start ?end) ?state ?time ?graph).
 	
 	?scope e:fail {action:Neoadjuvant_chemoradiotherapy_episode1 gps:status gps:completed.}.
 	?scope e:fail {?patient therapy:hasContraindicationForChemotherapy true }

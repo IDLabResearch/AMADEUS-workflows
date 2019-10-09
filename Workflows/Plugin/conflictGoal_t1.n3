@@ -18,10 +18,6 @@ PREFIX sct: <http://snomed.info/id/>
 # ?patient gps:checkedGoals true.
 #first goal 
 action:Neoadjuvant_chemoradiotherapy gps:status gps:completed.
-#second goal
-		?patient a  care:Patient. 
-		?patient  care:curedFrom sct:6142004.
-#todo: make automatic check here
 }
 =>
 {?patient gps:checkedPathAndGoals ?path}.
