@@ -24,7 +24,7 @@ PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
 		{?patient  care:curedFrom sct:6142004.}
 		action:take_oseltamivir 
 		"P10D"^^xsd:dayTimeDuration
-		14.09 
+		99.71 
 		0.8
 		0.8
 	)
@@ -41,10 +41,10 @@ PREFIX medication: <https://gitlab.ilabt.imec.be/KNoWS/dissect/medication#>
      ?patient gps:medication medication:zanamivir.}
 		{?patient  care:curedFrom sct:6142004.}
 		action:take_zanamivir  
-		"P12D"^^xsd:dayTimeDuration
+		"P8D"^^xsd:dayTimeDuration
 		99.71  
 		0.8
-		0.9
+		0.7
 	)
 } <= {
 	?patient a care:Patient. 
